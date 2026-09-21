@@ -61,3 +61,21 @@ body {
   outline: 3px solid var(--focus-ring);
   outline-offset: 3px;
 }
+
+.editorial-grid {
+  background-image:
+    linear-gradient(rgb(27 117 187 / 8%) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(27 117 187 / 8%) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
