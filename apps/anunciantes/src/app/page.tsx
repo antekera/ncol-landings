@@ -1,3 +1,5 @@
+import { AudienceStats } from "@/components/sections/audience-stats";
+import { Benefits } from "@/components/sections/benefits";
 import { SiteHeader } from "@/components/layout/site-header";
 import { Hero } from "@/components/sections/hero";
 
@@ -13,6 +15,8 @@ export default function Home() {
       <SiteHeader />
       <main id="contenido">
         <Hero />
+        <AudienceStats />
+        <Benefits />
       </main>
     </>
   );
