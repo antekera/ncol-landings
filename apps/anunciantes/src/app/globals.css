@@ -1,22 +1,63 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #102039;
+  color-scheme: light;
+
+  /* Identidad oficial de Noticiascol. */
+  --brand-blue: #1b75bb;
+  --brand-orange: #fc8c29;
+  --brand-orange-logo: #f6921e;
+  --brand-navy: #102039;
+  --brand-gray: #a6a8ab;
+
+  /* Superficies del minisite comercial. */
+  --background: #f7f8fa;
+  --surface: #ffffff;
+  --surface-muted: #eef3f7;
+  --foreground: var(--brand-navy);
+  --muted-foreground: #526174;
+  --border: #d9e1e8;
+  --focus-ring: var(--brand-orange);
 }
 
 @theme inline {
   --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-muted: var(--surface-muted);
   --color-foreground: var(--foreground);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-brand-blue: var(--brand-blue);
+  --color-brand-orange: var(--brand-orange);
+  --color-brand-orange-logo: var(--brand-orange-logo);
+  --color-brand-navy: var(--brand-navy);
+  --color-brand-gray: var(--brand-gray);
+  --font-sans: var(--font-manrope);
+  --font-serif: var(--font-martel);
 }
 
 * {
   box-sizing: border-box;
 }
 
+html {
+  background: var(--background);
+}
+
 body {
   margin: 0;
   background: var(--background);
   color: var(--foreground);
-  font-family: sans-serif;
+  font-family: var(--font-manrope), sans-serif;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--brand-blue) 22%, white);
+  color: var(--brand-navy);
+}
+
+:focus-visible {
+  outline: 3px solid var(--focus-ring);
+  outline-offset: 3px;
 }
