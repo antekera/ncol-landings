@@ -112,3 +112,7 @@ export const ADVERTISING_FORMATS: readonly AdvertisingFormat[] = [
     demoTarget: "popup",
   },
 ];
+
+export const RECOMMENDED_AD_FORMAT = ADVERTISING_FORMATS.find(
+  (format) => format.recommended,
+)!;
