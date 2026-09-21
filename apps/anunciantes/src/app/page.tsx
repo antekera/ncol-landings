@@ -1,5 +1,6 @@
 import { AudienceStats } from "@/components/sections/audience-stats";
 import { Benefits } from "@/components/sections/benefits";
+import { AdFormats } from "@/components/sections/ad-formats";
 import { SiteHeader } from "@/components/layout/site-header";
 import { Hero } from "@/components/sections/hero";
 
@@ -17,6 +18,7 @@ export default function Home() {
         <Hero />
         <AudienceStats />
         <Benefits />
+        <AdFormats />
       </main>
     </>
   );
