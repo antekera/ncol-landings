@@ -29,7 +29,7 @@ export function AudienceStats() {
               data-reveal
               className={`border-r border-b border-white/15 p-4 sm:p-6 lg:p-7 ${
                 stat.featured
-                  ? "col-span-2 bg-brand-blue lg:col-span-6"
+                  ? "col-span-1 bg-brand-blue lg:col-span-6"
                   : "col-span-1 lg:col-span-2"
               }`}
             >
@@ -39,7 +39,7 @@ export function AudienceStats() {
               <dd
                 className={`mt-4 font-serif leading-none font-extrabold tracking-[-0.04em] ${
                   stat.featured
-                    ? "text-4xl text-white sm:text-5xl"
+                    ? "text-3xl text-white sm:text-5xl"
                     : "text-2xl text-brand-orange sm:text-3xl"
                 }`}
               >

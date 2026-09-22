@@ -11,6 +11,14 @@ export const PLAN_PERIODS = [
 ] as const;
 
 export type PlanMonths = (typeof PLAN_PERIODS)[number];
+
+// These labels are presentation-only. The numeric values above remain the
+// source of truth for calculating each plan's monthly price and total.
+export const PLAN_PERIOD_LABELS = {
+  1: "30 días",
+  3: "90 días",
+  6: "180 días",
+} as const satisfies Record<PlanMonths, string>;
 export type AdSlotId =
   | "article-bottom"
   | "sidebar"

@@ -1,3 +1,4 @@
+import { PLAN_PERIOD_LABELS } from "@/data/advertising";
 import type { AdvertisingFormat, PlanMonths } from "@/data/advertising";
 
 const PLAN_PARAM_BY_MONTHS: Record<PlanMonths, string> = {
@@ -42,5 +43,5 @@ export function formatUsd(value: number) {
 }
 
 export function getPlanLabel(months: PlanMonths) {
-  return months === 1 ? "Plan 1 mes" : `Plan ${months} meses`;
+  return `Plan ${PLAN_PERIOD_LABELS[months]}`;
 }

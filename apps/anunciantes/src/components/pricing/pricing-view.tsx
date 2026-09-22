@@ -2,6 +2,7 @@ import { SectionHeading } from "@/components/ui/section-heading";
 import { VisibilityBadge } from "@/components/ui/visibility-badge";
 import {
   ADVERTISING_FORMATS,
+  PLAN_PERIOD_LABELS,
   PLAN_PERIODS,
   type PlanMonths,
 } from "@/data/advertising";
@@ -19,7 +20,7 @@ type PricingViewProps = {
 
 function PeriodSelector({ months, onPeriodChange }: PricingViewProps) {
   return (
-    <div className="sticky top-[4.5rem] z-30 -mx-1 rounded-2xl bg-background/95 px-1 py-2 shadow-[0_14px_32px_-26px_rgba(16,32,57,0.8)] backdrop-blur-sm lg:static lg:mx-0 lg:rounded-none lg:bg-transparent lg:p-0 lg:shadow-none">
+    <div className="sticky top-[4.5rem] z-30 -mx-1 rounded-2xl bg-background/95 px-1 py-2 backdrop-blur-sm lg:static lg:mx-0 lg:rounded-none lg:bg-transparent lg:p-0">
       <div
         role="radiogroup"
         aria-label="Duración de la campaña"
@@ -27,7 +28,7 @@ function PeriodSelector({ months, onPeriodChange }: PricingViewProps) {
       >
         {PLAN_PERIODS.map((period) => {
           const selected = months === period;
-          const periodLabel = period === 1 ? "1 mes" : `${period} meses`;
+          const periodLabel = PLAN_PERIOD_LABELS[period];
 
           return (
             <button
