@@ -3,7 +3,6 @@ import { VisibilityBadge } from "@/components/ui/visibility-badge";
 import {
   ADVERTISING_FORMATS,
   PLAN_PERIODS,
-  RECOMMENDED_AD_FORMAT,
   type PlanMonths,
 } from "@/data/advertising";
 import {
@@ -12,6 +11,7 @@ import {
   getPlanPricing,
 } from "@/lib/pricing";
 import { AdDemoButton } from "@/components/demo/ad-demo";
+import { FrequentlyAskedQuestions } from "@/components/sections/faq";
 
 type PricingViewProps = {
   months: PlanMonths;
@@ -278,100 +278,6 @@ function MobilePricingCards({ months }: Pick<PricingViewProps, "months">) {
   );
 }
 
-function RecommendedSticky({ months }: Pick<PricingViewProps, "months">) {
-  const pricing = getPlanPricing(RECOMMENDED_AD_FORMAT, months);
-
-  return (
-    <section
-      id="sticky-recomendado"
-      aria-labelledby="sticky-title"
-      className="overflow-hidden bg-brand-navy text-white"
-    >
-      <div className="mx-auto grid max-w-7xl lg:grid-cols-[0.9fr_1.1fr]">
-        <div className="px-5 py-20 sm:px-6 sm:py-24 lg:px-8">
-          <span className="inline-flex border border-brand-orange px-3 py-1.5 text-[0.65rem] font-extrabold tracking-[0.12em] text-brand-orange uppercase">
-            Formato recomendado
-          </span>
-          <h2
-            id="sticky-title"
-            className="mt-6 font-serif text-4xl leading-tight font-extrabold tracking-[-0.04em] sm:text-5xl"
-          >
-            Sticky Bottom
-          </h2>
-          <p className="mt-4 max-w-lg text-base leading-7 text-white/65 sm:text-lg sm:leading-8">
-            Presencia persistente durante la navegación, diseñada para sostener
-            visibilidad sin perder la adaptación mobile.
-          </p>
-
-          <div className="mt-8">
-            <Price
-              formatId={RECOMMENDED_AD_FORMAT.id}
-              months={months}
-              inverted
-              {...pricing}
-            />
-          </div>
-
-          <ul className="mt-8 space-y-3 border-t border-white/15 pt-6 text-sm font-bold text-white/80">
-            <li className="flex gap-3">
-              <span className="text-brand-orange" aria-hidden="true">
-                +
-              </span>
-              Alta visibilidad / continua
-            </li>
-            {RECOMMENDED_AD_FORMAT.benefits.map((benefit) => (
-              <li key={benefit} className="flex gap-3">
-                <span className="text-brand-orange" aria-hidden="true">
-                  +
-                </span>
-                {benefit}
-              </li>
-            ))}
-          </ul>
-
-          <AdDemoButton
-            slot={RECOMMENDED_AD_FORMAT.demoTarget}
-            className="mt-8 inline-flex min-h-12 items-center border border-brand-orange px-5 py-3 text-sm font-extrabold text-brand-orange hover:bg-white/10"
-          >
-            Verlo funcionando
-          </AdDemoButton>
-        </div>
-
-        <div className="relative min-h-[25rem] border-t border-white/15 bg-[#0b172a] p-5 sm:min-h-[32rem] sm:p-10 lg:border-t-0 lg:border-l">
-          <div className="absolute inset-0 opacity-20 editorial-grid" />
-          <div className="relative mx-auto h-full max-w-xl border border-white/20 bg-surface p-4 shadow-[0_30px_80px_-30px_rgba(0,0,0,0.8)] sm:p-6">
-            <div className="flex items-center justify-between border-b border-brand-navy pb-3">
-              <span className="text-xs font-black text-brand-blue">
-                noticias<span className="text-brand-orange">col</span>
-                <span className="text-brand-gray">.com</span>
-              </span>
-              <span className="h-1.5 w-14 bg-brand-navy/15" />
-            </div>
-            <div className="mt-5 h-4 w-4/5 bg-brand-navy" />
-            <div className="mt-2 h-4 w-3/5 bg-brand-navy" />
-            <div className="mt-5 aspect-[16/7] bg-surface-muted editorial-grid" />
-            <div className="mt-5 space-y-2">
-              <div className="h-2 w-full bg-brand-navy/10" />
-              <div className="h-2 w-11/12 bg-brand-navy/10" />
-              <div className="h-2 w-4/5 bg-brand-navy/10" />
-            </div>
-            <div className="absolute right-4 bottom-4 left-4 grid min-h-16 place-items-center border-2 border-brand-orange bg-[#fff3e6] px-4 text-center shadow-[0_16px_36px_-18px_rgba(16,32,57,0.8)] sm:right-6 sm:bottom-6 sm:left-6">
-              <div>
-                <span className="block text-xs font-extrabold tracking-[0.12em] text-brand-orange uppercase">
-                  Sticky Bottom
-                </span>
-                <span className="mt-1 block text-[0.65rem] font-bold text-brand-navy/60">
-                  970 × 90 · 320 × 100
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
 export function PricingView({ months, onPeriodChange }: PricingViewProps) {
   return (
     <>
@@ -400,7 +306,7 @@ export function PricingView({ months, onPeriodChange }: PricingViewProps) {
         </div>
       </section>
 
-      <RecommendedSticky months={months} />
+      <FrequentlyAskedQuestions />
     </>
   );
 }
