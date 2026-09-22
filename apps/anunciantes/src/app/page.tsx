@@ -5,6 +5,7 @@ import { Pricing } from "@/components/sections/pricing";
 import { SiteHeader } from "@/components/layout/site-header";
 import { Hero } from "@/components/sections/hero";
 import { AdDemoProvider } from "@/components/demo/ad-demo";
+import { MotionObserver } from "@/components/ui/motion-observer";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
         Saltar al contenido
       </a>
       <AdDemoProvider>
+        <MotionObserver />
         <SiteHeader />
         <main id="contenido">
           <Hero />

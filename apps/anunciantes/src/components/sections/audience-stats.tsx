@@ -10,7 +10,7 @@ export function AudienceStats() {
     >
       <div className="pointer-events-none absolute inset-0 -z-10 opacity-20 editorial-grid" />
       <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
-        <div className="grid gap-8 border-b border-white/15 pb-10 lg:grid-cols-[1fr_0.7fr] lg:items-end">
+        <div className="grid gap-8 border-b border-white/15 pb-10 lg:grid-cols-[1fr_0.7fr] lg:items-end" data-reveal>
           <div>
             <SectionHeading
               eyebrow="Una audiencia que ya está aquí"
@@ -30,9 +30,10 @@ export function AudienceStats() {
           {AUDIENCE_STATS.map((stat) => (
             <div
               key={stat.label}
+              data-reveal
               className={`border-r border-b border-white/15 p-4 sm:p-6 lg:p-7 ${
                 stat.featured
-                  ? "col-span-2 bg-brand-blue lg:col-span-4"
+                  ? "col-span-2 bg-brand-blue lg:col-span-6"
                   : "col-span-1 lg:col-span-2"
               }`}
             >

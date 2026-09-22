@@ -1,9 +1,10 @@
 import { NoticiascolLogo } from "@/components/brand/noticiascol-logo";
-import { MobileNavigation } from "@/components/layout/mobile-navigation";
-import { PRIMARY_NAVIGATION } from "@/data/navigation";
-import { CAMPAIGN_EMAIL_URL } from "@/lib/contact";
+import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
+import { EDITORIAL_CONTACT_URL, getWhatsAppAdvisorUrl } from "@/lib/contact";
 
 export function SiteHeader() {
+  const whatsappUrl = getWhatsAppAdvisorUrl(process.env.NEXT_PUBLIC_WHATSAPP_PHONE);
+
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-surface/95 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-7xl items-center gap-3 px-4 sm:h-[4.5rem] sm:px-6 lg:px-8">
@@ -12,7 +13,7 @@ export function SiteHeader() {
           aria-label="Noticiascol para Anunciantes, ir al inicio"
           className="flex min-w-0 items-center gap-3"
         >
-          <NoticiascolLogo className="h-auto w-[8.75rem] sm:w-[11.5rem]" />
+          <NoticiascolLogo className="h-auto w-[9.25rem] sm:w-[12rem]" />
           <span className="hidden border-l border-border pl-3 text-[0.68rem] leading-none font-extrabold tracking-[0.16em] text-brand-navy uppercase min-[430px]:block">
             Para
             <br />
@@ -20,30 +21,31 @@ export function SiteHeader() {
           </span>
         </a>
 
-        <nav aria-label="Navegación principal" className="ml-auto hidden lg:block">
-          <ul className="flex items-center gap-7">
-            {PRIMARY_NAVIGATION.map((item) => (
-              <li key={item.href}>
-                <a
-                  href={item.href}
-                  className="text-sm font-bold text-brand-navy transition-colors hover:text-brand-blue"
-                >
-                  {item.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </nav>
-
         <a
-          href={CAMPAIGN_EMAIL_URL}
-          className="ml-auto inline-flex min-h-11 shrink-0 items-center justify-center bg-brand-orange px-3 text-xs font-extrabold text-brand-navy transition-colors hover:bg-brand-navy hover:text-white sm:px-5 sm:text-sm lg:ml-3"
+          href={EDITORIAL_CONTACT_URL}
+          className="ml-auto hidden min-h-11 shrink-0 items-center justify-center rounded-xl bg-brand-orange px-5 text-sm font-extrabold text-brand-navy transition-colors hover:bg-brand-navy hover:text-white lg:inline-flex"
         >
-          <span className="sm:hidden">Solicitar</span>
-          <span className="hidden sm:inline">Solicitar campaña</span>
+          Solicitar campaña
         </a>
 
-        <MobileNavigation />
+        {whatsappUrl ? (
+          <a
+            href={whatsappUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="ml-auto inline-flex min-h-11 shrink-0 items-center justify-center gap-2 rounded-xl bg-[#25D366] px-3 text-xs font-extrabold text-[#102039] transition-colors hover:bg-[#1ebe5b] sm:px-4 sm:text-sm lg:hidden"
+          >
+            <WhatsAppIcon className="size-4" />
+            Contactar asesor
+          </a>
+        ) : (
+          <a
+            href={EDITORIAL_CONTACT_URL}
+            className="ml-auto inline-flex min-h-11 shrink-0 items-center justify-center rounded-xl bg-brand-orange px-3 text-xs font-extrabold text-brand-navy transition-colors hover:bg-brand-navy hover:text-white sm:px-4 sm:text-sm lg:hidden"
+          >
+            Solicitar campaña
+          </a>
+        )}
       </div>
     </header>
   );

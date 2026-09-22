@@ -13,11 +13,6 @@ export const AUDIENCE_STATS: readonly AudienceStat[] = [
     featured: true,
   },
   {
-    value: "Más de 187.000",
-    label: "Sesiones",
-    context: "en el período reciente",
-  },
-  {
     value: "Más de 128.000",
     label: "Usuarios nuevos",
     context: "en el período reciente",

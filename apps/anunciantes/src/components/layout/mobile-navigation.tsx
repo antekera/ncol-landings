@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { PRIMARY_NAVIGATION } from "@/data/navigation";
-import { CAMPAIGN_EMAIL_URL } from "@/lib/contact";
+import { EDITORIAL_CONTACT_URL } from "@/lib/contact";
 
 export function MobileNavigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -66,7 +66,7 @@ export function MobileNavigation() {
             ))}
           </ul>
           <a
-            href={CAMPAIGN_EMAIL_URL}
+          href={EDITORIAL_CONTACT_URL}
             onClick={() => setIsOpen(false)}
             className="mt-5 flex min-h-12 items-center justify-center bg-brand-orange px-5 py-3 text-sm font-extrabold text-brand-navy hover:bg-brand-navy hover:text-white"
           >

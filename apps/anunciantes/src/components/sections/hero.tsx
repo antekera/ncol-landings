@@ -1,4 +1,4 @@
-import { CAMPAIGN_EMAIL_URL } from "@/lib/contact";
+import { EDITORIAL_CONTACT_URL } from "@/lib/contact";
 
 function AdPlacementShowcase() {
   return (
@@ -7,7 +7,7 @@ function AdPlacementShowcase() {
       aria-label="Representación de anuncios dentro de una noticia de Noticiascol"
       role="img"
     >
-      <div className="absolute top-2 right-1 left-0 overflow-hidden border border-brand-navy/15 bg-surface shadow-[0_28px_70px_-36px_rgba(16,32,57,0.6)] sm:right-12">
+      <div className="absolute top-2 right-1 left-0 overflow-hidden rounded-2xl border border-brand-navy/15 bg-surface shadow-[0_28px_70px_-36px_rgba(16,32,57,0.6)] sm:right-12">
         <div className="flex h-8 items-center gap-1.5 border-b border-border bg-surface-muted px-3 sm:h-10">
           <span className="size-2 bg-brand-orange" />
           <span className="size-2 bg-brand-blue" />
@@ -66,7 +66,7 @@ function AdPlacementShowcase() {
         </div>
       </div>
 
-      <div className="absolute right-0 bottom-0 w-[42%] min-w-[8.25rem] max-w-[11.5rem] border-[0.35rem] border-brand-navy bg-surface shadow-[0_24px_52px_-22px_rgba(16,32,57,0.75)] sm:border-[0.45rem]">
+      <div className="absolute right-0 bottom-0 w-[42%] min-w-[8.25rem] max-w-[11.5rem] overflow-hidden rounded-[1.35rem] border-[0.35rem] border-brand-navy bg-surface shadow-[0_24px_52px_-22px_rgba(16,32,57,0.75)] sm:border-[0.45rem]">
         <div className="mx-auto h-1.5 w-8 bg-brand-navy sm:h-2 sm:w-10" />
         <div className="border-t border-brand-navy/10 p-2 sm:p-3">
           <div className="flex items-center justify-between border-b border-border pb-1.5">
@@ -105,10 +105,8 @@ export function Hero() {
   return (
     <section id="inicio" className="relative isolate overflow-hidden bg-surface">
       <div className="pointer-events-none absolute inset-y-0 right-0 -z-10 hidden w-[42%] border-l border-brand-blue/10 editorial-grid lg:block" />
-      <div className="pointer-events-none absolute top-0 left-0 -z-10 h-1 w-2/3 bg-brand-orange sm:w-1/3" />
-
       <div className="mx-auto grid min-h-[calc(100dvh-4rem)] max-w-7xl items-center gap-12 px-5 py-14 sm:px-6 sm:py-20 lg:min-h-[calc(100dvh-4.5rem)] lg:grid-cols-[0.88fr_1.12fr] lg:gap-10 lg:px-8 lg:py-16">
-        <div className="max-w-2xl">
+        <div className="max-w-2xl" data-reveal>
           <p className="flex items-center gap-3 text-xs font-extrabold tracking-[0.18em] text-brand-blue uppercase sm:text-sm">
             <span className="h-px w-8 bg-brand-orange" aria-hidden="true" />
             Publicidad digital en Noticiascol
@@ -125,7 +123,7 @@ export function Hero() {
           <div className="mt-8 flex flex-col gap-3 min-[390px]:flex-row">
             <a
               href="#formatos"
-              className="group inline-flex min-h-12 items-center justify-center gap-3 bg-brand-blue px-6 py-3 text-sm font-extrabold text-white transition-colors hover:bg-brand-navy"
+              className="group inline-flex min-h-12 items-center justify-center gap-3 rounded-xl bg-brand-blue px-6 py-3 text-sm font-extrabold text-white transition-colors hover:bg-brand-navy"
             >
               Ver formatos
               <span
@@ -136,8 +134,8 @@ export function Hero() {
               </span>
             </a>
             <a
-              href={CAMPAIGN_EMAIL_URL}
-              className="inline-flex min-h-12 items-center justify-center border border-brand-navy px-6 py-3 text-sm font-extrabold text-brand-navy transition-colors hover:bg-brand-navy hover:text-white"
+              href={EDITORIAL_CONTACT_URL}
+              className="inline-flex min-h-12 items-center justify-center rounded-xl border border-brand-navy px-6 py-3 text-sm font-extrabold text-brand-navy transition-colors hover:bg-brand-navy hover:text-white"
             >
               Solicitar campaña
             </a>
@@ -159,7 +157,7 @@ export function Hero() {
           </ul>
         </div>
 
-        <div className="relative -mx-1 sm:mx-0">
+        <div className="relative -mx-1 sm:mx-0" data-reveal>
           <span className="absolute -top-7 right-0 hidden text-xs font-extrabold tracking-[0.2em] text-brand-gray uppercase [writing-mode:vertical-rl] sm:-right-4 sm:block">
             Espacios reales
           </span>

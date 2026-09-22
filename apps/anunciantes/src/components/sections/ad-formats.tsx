@@ -11,7 +11,7 @@ export function AdFormats() {
       className="bg-surface py-20 sm:py-24"
     >
       <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
-        <div className="grid gap-8 lg:grid-cols-[1fr_0.65fr] lg:items-end">
+        <div className="grid gap-8 lg:grid-cols-[1fr_0.65fr] lg:items-end" data-reveal>
           <SectionHeading
             eyebrow="Formatos publicitarios"
             title="Una ubicación para cada nivel de visibilidad."
@@ -24,12 +24,13 @@ export function AdFormats() {
           </p>
         </div>
 
-        <div className="mt-12 grid border-t border-l border-border sm:grid-cols-2 lg:mt-16">
+        <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:mt-16">
           {ADVERTISING_FORMATS.map((format, index) => (
             <article
               key={format.id}
               id={`formato-${format.id}`}
-              className={`relative border-r border-b p-5 sm:p-7 ${
+              data-reveal
+              className={`relative overflow-hidden rounded-2xl border p-5 shadow-[0_18px_42px_-38px_rgba(16,32,57,0.7)] sm:p-7 ${
                 format.recommended
                   ? "border-brand-navy bg-brand-navy text-white sm:col-span-2"
                   : "border-border bg-surface"
@@ -54,7 +55,7 @@ export function AdFormats() {
                       {String(index + 1).padStart(2, "0")}
                     </span>
                     {format.recommended ? (
-                      <span className="border border-brand-orange px-2.5 py-1 text-[0.65rem] font-extrabold tracking-[0.1em] text-brand-orange uppercase">
+                      <span className="rounded-md border border-brand-orange px-2.5 py-1 text-[0.65rem] font-extrabold tracking-[0.1em] text-brand-orange uppercase">
                         Formato recomendado
                       </span>
                     ) : null}
@@ -132,7 +133,7 @@ export function AdFormats() {
 
               <AdDemoButton
                 slot={format.demoTarget}
-                className={`mt-7 inline-flex min-h-11 items-center border px-4 py-2 text-xs font-extrabold transition-colors ${
+                className={`mt-7 inline-flex min-h-11 items-center rounded-xl border px-4 py-2 text-xs font-extrabold transition-colors ${
                   format.recommended
                     ? "border-brand-orange text-brand-orange hover:bg-white/10"
                     : "border-brand-navy text-brand-navy hover:bg-surface-muted"

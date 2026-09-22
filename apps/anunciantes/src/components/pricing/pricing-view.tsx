@@ -10,7 +10,6 @@ import {
   getPlanLabel,
   getPlanPricing,
 } from "@/lib/pricing";
-import { AdDemoButton } from "@/components/demo/ad-demo";
 import { FrequentlyAskedQuestions } from "@/components/sections/faq";
 
 type PricingViewProps = {
@@ -24,7 +23,7 @@ function PeriodSelector({ months, onPeriodChange }: PricingViewProps) {
       <div
         role="radiogroup"
         aria-label="Duración de la campaña"
-        className="grid grid-cols-3 border border-brand-navy bg-surface"
+        className="grid grid-cols-3 overflow-hidden rounded-xl border border-brand-navy bg-surface"
       >
         {PLAN_PERIODS.map((period) => {
           const selected = months === period;
@@ -109,7 +108,7 @@ function Price({
         {getPlanLabel(months)} · {formatUsd(total)} total
       </p>
       {savingsPercent > 0 ? (
-        <span className="mt-2 inline-flex bg-brand-orange px-2 py-1 text-[0.65rem] font-extrabold text-brand-navy">
+        <span className="mt-2 inline-flex rounded-md bg-brand-orange px-2 py-1 text-[0.65rem] font-extrabold text-brand-navy">
           Ahorra {savingsPercent}%
         </span>
       ) : null}
@@ -119,7 +118,7 @@ function Price({
 
 function DesktopPricingTable({ months }: Pick<PricingViewProps, "months">) {
   return (
-    <div className="mt-12 hidden overflow-hidden border border-border lg:block">
+    <div className="mt-12 hidden overflow-hidden rounded-2xl border border-border shadow-[0_20px_54px_-42px_rgba(16,32,57,0.55)] lg:block">
       <table className="w-full border-collapse text-left">
         <thead className="bg-brand-navy text-white">
           <tr className="text-[0.65rem] font-extrabold tracking-[0.12em] uppercase">
@@ -153,26 +152,11 @@ function DesktopPricingTable({ months }: Pick<PricingViewProps, "months">) {
                       {format.name}
                     </span>
                     {format.recommended ? (
-                      <span className="bg-brand-orange px-2 py-1 text-[0.55rem] font-extrabold tracking-[0.08em] text-brand-navy uppercase">
+                      <span className="rounded-md bg-brand-orange px-2 py-1 text-[0.55rem] font-extrabold tracking-[0.08em] text-brand-navy uppercase">
                         Recomendado
                       </span>
                     ) : null}
                   </div>
-                  <p className="mt-2 text-xs leading-5 font-normal text-muted-foreground">
-                    Desktop {format.dimensions.desktop}
-                    <br />
-                    Mobile {format.dimensions.mobile}
-                  </p>
-                  <a
-                    href={`#formato-${format.id}`}
-                    className="mt-3 inline-flex text-xs font-extrabold text-brand-blue underline decoration-brand-orange underline-offset-4"
-                  >
-                    Ver ubicación
-                  </a>
-                  <AdDemoButton
-                    slot={format.demoTarget}
-                    className="mt-3 ml-4 inline-flex min-h-11 items-center border border-brand-navy px-3 py-2 text-xs font-extrabold text-brand-navy hover:bg-surface-muted"
-                  />
                 </th>
                 <td className="px-6 py-6">
                   <VisibilityBadge visibility={format.visibility} />
@@ -207,13 +191,13 @@ function DesktopPricingTable({ months }: Pick<PricingViewProps, "months">) {
 
 function MobilePricingCards({ months }: Pick<PricingViewProps, "months">) {
   return (
-    <div className="mt-10 grid border-t border-l border-border lg:hidden">
+    <div className="mt-10 grid gap-4 lg:hidden">
       {ADVERTISING_FORMATS.map((format) => {
         const pricing = getPlanPricing(format, months);
         return (
           <article
             key={format.id}
-            className={`border-r border-b border-border p-5 sm:p-7 ${
+            className={`rounded-2xl border border-border p-5 shadow-[0_18px_42px_-38px_rgba(16,32,57,0.7)] sm:p-7 ${
               format.recommended ? "bg-[#fff7ed]" : "bg-surface"
             }`}
           >
@@ -223,7 +207,7 @@ function MobilePricingCards({ months }: Pick<PricingViewProps, "months">) {
                   {format.name}
                 </h3>
                 {format.recommended ? (
-                  <span className="mt-2 inline-flex bg-brand-orange px-2 py-1 text-[0.6rem] font-extrabold tracking-[0.08em] text-brand-navy uppercase">
+                  <span className="mt-2 inline-flex rounded-md bg-brand-orange px-2 py-1 text-[0.6rem] font-extrabold tracking-[0.08em] text-brand-navy uppercase">
                     Formato recomendado
                   </span>
                 ) : null}
@@ -235,27 +219,8 @@ function MobilePricingCards({ months }: Pick<PricingViewProps, "months">) {
               <Price formatId={format.id} months={months} {...pricing} />
             </div>
 
-            <dl className="mt-6 grid grid-cols-2 border-t border-border pt-4 text-xs">
-              <div>
-                <dt className="font-extrabold tracking-[0.08em] text-muted-foreground uppercase">
-                  Desktop
-                </dt>
-                <dd className="mt-1 font-bold text-brand-navy">
-                  {format.dimensions.desktop}
-                </dd>
-              </div>
-              <div>
-                <dt className="font-extrabold tracking-[0.08em] text-muted-foreground uppercase">
-                  Mobile
-                </dt>
-                <dd className="mt-1 font-bold text-brand-navy">
-                  {format.dimensions.mobile}
-                </dd>
-              </div>
-            </dl>
-
             {format.benefits.length > 0 ? (
-              <ul className="mt-5 space-y-2 text-sm text-muted-foreground">
+              <ul className="mt-6 space-y-2 border-t border-border pt-5 text-sm text-muted-foreground">
                 {format.benefits.map((benefit) => (
                   <li key={benefit} className="flex gap-2">
                     <span className="font-bold text-brand-orange" aria-hidden="true">
@@ -267,10 +232,6 @@ function MobilePricingCards({ months }: Pick<PricingViewProps, "months">) {
               </ul>
             ) : null}
 
-            <AdDemoButton
-              slot={format.demoTarget}
-              className="mt-6 inline-flex min-h-11 items-center border border-brand-navy px-4 py-2 text-xs font-extrabold text-brand-navy"
-            />
           </article>
         );
       })}
@@ -281,13 +242,8 @@ function MobilePricingCards({ months }: Pick<PricingViewProps, "months">) {
 export function PricingView({ months, onPeriodChange }: PricingViewProps) {
   return (
     <>
-      <section
-        id="tarifas"
-        aria-labelledby="tarifas-title"
-        className="bg-background py-20 sm:py-24"
-      >
-        <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
-          <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end">
+      <div>
+          <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end" data-reveal>
             <SectionHeading
               eyebrow="Tarifas"
               title="Elige una duración. Compara un solo precio."
@@ -301,10 +257,9 @@ export function PricingView({ months, onPeriodChange }: PricingViewProps) {
             Tarifas actualizadas para {getPlanLabel(months).toLowerCase()}.
           </p>
 
-          <DesktopPricingTable months={months} />
-          <MobilePricingCards months={months} />
-        </div>
-      </section>
+          <div data-reveal><DesktopPricingTable months={months} /></div>
+          <div data-reveal><MobilePricingCards months={months} /></div>
+      </div>
 
       <FrequentlyAskedQuestions />
     </>
