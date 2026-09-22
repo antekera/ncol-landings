@@ -1,6 +1,7 @@
 import { SectionHeading } from "@/components/ui/section-heading";
 import { VisibilityBadge } from "@/components/ui/visibility-badge";
 import { ADVERTISING_FORMATS } from "@/data/advertising";
+import { AdDemoButton } from "@/components/demo/ad-demo";
 
 export function AdFormats() {
   return (
@@ -128,6 +129,15 @@ export function AdFormats() {
                   ))}
                 </ul>
               ) : null}
+
+              <AdDemoButton
+                slot={format.demoTarget}
+                className={`mt-7 inline-flex min-h-11 items-center border px-4 py-2 text-xs font-extrabold transition-colors ${
+                  format.recommended
+                    ? "border-brand-orange text-brand-orange hover:bg-white/10"
+                    : "border-brand-navy text-brand-navy hover:bg-surface-muted"
+                }`}
+              />
             </article>
           ))}
         </div>

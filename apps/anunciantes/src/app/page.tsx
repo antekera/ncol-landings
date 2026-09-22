@@ -4,6 +4,7 @@ import { AdFormats } from "@/components/sections/ad-formats";
 import { Pricing } from "@/components/sections/pricing";
 import { SiteHeader } from "@/components/layout/site-header";
 import { Hero } from "@/components/sections/hero";
+import { AdDemoProvider } from "@/components/demo/ad-demo";
 
 export default function Home() {
   return (
@@ -14,14 +15,16 @@ export default function Home() {
       >
         Saltar al contenido
       </a>
-      <SiteHeader />
-      <main id="contenido">
-        <Hero />
-        <AudienceStats />
-        <Benefits />
-        <AdFormats />
-        <Pricing />
-      </main>
+      <AdDemoProvider>
+        <SiteHeader />
+        <main id="contenido">
+          <Hero />
+          <AudienceStats />
+          <Benefits />
+          <AdFormats />
+          <Pricing />
+        </main>
+      </AdDemoProvider>
     </>
   );
 }

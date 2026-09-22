@@ -11,6 +11,7 @@ import {
   getPlanLabel,
   getPlanPricing,
 } from "@/lib/pricing";
+import { AdDemoButton } from "@/components/demo/ad-demo";
 
 type PricingViewProps = {
   months: PlanMonths;
@@ -168,6 +169,10 @@ function DesktopPricingTable({ months }: Pick<PricingViewProps, "months">) {
                   >
                     Ver ubicación
                   </a>
+                  <AdDemoButton
+                    slot={format.demoTarget}
+                    className="mt-3 ml-4 inline-flex min-h-11 items-center border border-brand-navy px-3 py-2 text-xs font-extrabold text-brand-navy hover:bg-surface-muted"
+                  />
                 </th>
                 <td className="px-6 py-6">
                   <VisibilityBadge visibility={format.visibility} />
@@ -262,12 +267,10 @@ function MobilePricingCards({ months }: Pick<PricingViewProps, "months">) {
               </ul>
             ) : null}
 
-            <a
-              href={`#formato-${format.id}`}
+            <AdDemoButton
+              slot={format.demoTarget}
               className="mt-6 inline-flex min-h-11 items-center border border-brand-navy px-4 py-2 text-xs font-extrabold text-brand-navy"
-            >
-              Ver ubicación
-            </a>
+            />
           </article>
         );
       })}
@@ -325,6 +328,13 @@ function RecommendedSticky({ months }: Pick<PricingViewProps, "months">) {
               </li>
             ))}
           </ul>
+
+          <AdDemoButton
+            slot={RECOMMENDED_AD_FORMAT.demoTarget}
+            className="mt-8 inline-flex min-h-12 items-center border border-brand-orange px-5 py-3 text-sm font-extrabold text-brand-orange hover:bg-white/10"
+          >
+            Verlo funcionando
+          </AdDemoButton>
         </div>
 
         <div className="relative min-h-[25rem] border-t border-white/15 bg-[#0b172a] p-5 sm:min-h-[32rem] sm:p-10 lg:border-t-0 lg:border-l">
