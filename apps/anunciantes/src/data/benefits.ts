@@ -20,9 +20,9 @@ export const COMMERCIAL_BENEFITS: readonly CommercialBenefit[] = [
       "Los formatos contemplan primero la experiencia donde se concentra la mayor parte del tráfico.",
   },
   {
-    title: "Medición clara",
+    title: "Informes con datos reales",
     description:
-      "Las campañas pueden reportar impresiones, clics, CTR y período de publicación.",
+      "Recibe informes con vistas y clics reales de tu campaña, junto con su período de publicación.",
   },
   {
     title: "Visibilidad conocida",

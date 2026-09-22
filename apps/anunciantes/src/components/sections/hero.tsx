@@ -154,7 +154,7 @@ export function Hero() {
             </li>
             <li className="flex items-center gap-2">
               <span className="size-1.5 bg-brand-orange" aria-hidden="true" />
-              Reportes claros
+              Informes reales de vistas y clics
             </li>
           </ul>
         </div>
