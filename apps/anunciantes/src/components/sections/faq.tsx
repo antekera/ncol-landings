@@ -8,7 +8,7 @@ export function FrequentlyAskedQuestions() {
       aria-labelledby="preguntas-title"
       className="bg-brand-navy py-20 text-white sm:py-24"
     >
-      <div className="mx-auto grid max-w-7xl gap-12 px-5 sm:px-6 lg:grid-cols-[0.78fr_1.22fr] lg:gap-20 lg:px-8">
+      <div className="grid gap-12 px-5 sm:px-6 lg:grid-cols-[0.78fr_1.22fr] lg:gap-20 lg:px-8">
         <div data-reveal>
           <SectionHeading
             eyebrow="Preguntas frecuentes"

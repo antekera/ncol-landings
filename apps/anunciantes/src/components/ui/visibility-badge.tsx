@@ -15,7 +15,7 @@ type VisibilityBadgeProps = {
 export function VisibilityBadge({ visibility }: VisibilityBadgeProps) {
   return (
     <span
-      className={`inline-flex min-h-7 items-center border px-2.5 py-1 text-[0.65rem] font-extrabold tracking-[0.08em] uppercase ${VISIBILITY_STYLES[visibility]}`}
+      className={`inline-flex min-h-7 items-center rounded-full border px-3 py-1 text-[0.65rem] font-extrabold tracking-[0.08em] uppercase ${VISIBILITY_STYLES[visibility]}`}
     >
       Visibilidad: {visibility}
     </span>

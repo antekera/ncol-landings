@@ -107,7 +107,7 @@ export function PricingLeadGate({ months, onUnlocked }: PricingLeadGateProps) {
           <button
             type="submit"
             disabled={isSubmitting}
-            className="inline-flex min-h-12 w-full items-center justify-center rounded-xl bg-brand-orange px-5 text-sm font-extrabold text-brand-navy transition-colors hover:bg-brand-navy hover:text-white disabled:cursor-wait disabled:opacity-70 sm:w-auto"
+            className="inline-flex min-h-12 w-full items-center justify-center rounded-xl bg-brand-orange px-5 text-sm font-extrabold text-white transition-colors hover:bg-brand-navy disabled:cursor-wait disabled:opacity-70 sm:w-auto"
           >
             {isSubmitting ? "Enviando datos…" : "Ver precios"}
           </button>

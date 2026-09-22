@@ -7,6 +7,7 @@ import { Hero } from "@/components/sections/hero";
 import { AdDemoProvider } from "@/components/demo/ad-demo";
 import { MotionObserver } from "@/components/ui/motion-observer";
 import { CampaignTransparency } from "@/components/sections/campaign-transparency";
+import { SiteFooter } from "@/components/layout/site-footer";
 
 export default function Home() {
   return (
@@ -28,6 +29,7 @@ export default function Home() {
           <AdFormats />
           <Pricing />
         </main>
+        <SiteFooter />
       </AdDemoProvider>
     </>
   );

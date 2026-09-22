@@ -29,16 +29,16 @@ export function SiteHeader() {
 
         <a
           href={EDITORIAL_CONTACT_URL}
-          className="ml-auto hidden min-h-11 shrink-0 items-center justify-center rounded-xl bg-brand-orange px-5 text-sm font-extrabold text-brand-navy transition-colors hover:bg-brand-navy hover:text-white lg:inline-flex"
+          className="ml-auto hidden min-h-11 shrink-0 items-center justify-center rounded-xl bg-brand-orange px-5 text-sm font-extrabold text-white transition-colors hover:bg-brand-navy lg:inline-flex"
         >
-          Solicitar campaña
+          Contáctanos
         </a>
 
         <a
           href={whatsappUrl}
           target="_blank"
           rel="noreferrer"
-          className="ml-auto inline-flex min-h-11 shrink-0 items-center justify-center gap-2 rounded-xl bg-[#25D366] px-3 text-xs font-extrabold text-[#102039] transition-colors hover:bg-[#1ebe5b] sm:px-4 sm:text-sm lg:hidden"
+          className="ml-auto inline-flex min-h-11 shrink-0 items-center justify-center gap-2 rounded-xl bg-[#25D366] px-3 text-xs font-extrabold text-white transition-colors hover:bg-[#1ebe5b] sm:px-4 sm:text-sm lg:hidden"
         >
           <WhatsAppIcon className="size-4" />
           Contactar asesor

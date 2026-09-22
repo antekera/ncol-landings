@@ -19,7 +19,7 @@ type PricingViewProps = {
 
 function PeriodSelector({ months, onPeriodChange }: PricingViewProps) {
   return (
-    <div>
+    <div className="sticky top-[4.5rem] z-30 -mx-1 rounded-2xl bg-background/95 px-1 py-2 shadow-[0_14px_32px_-26px_rgba(16,32,57,0.8)] backdrop-blur-sm lg:static lg:mx-0 lg:rounded-none lg:bg-transparent lg:p-0 lg:shadow-none">
       <div
         role="radiogroup"
         aria-label="Duración de la campaña"
@@ -242,7 +242,8 @@ function MobilePricingCards({ months }: Pick<PricingViewProps, "months">) {
 export function PricingView({ months, onPeriodChange }: PricingViewProps) {
   return (
     <>
-      <div>
+      <section id="tarifas" aria-labelledby="tarifas-title" className="bg-background py-20 sm:py-24">
+        <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end" data-reveal>
             <SectionHeading
               eyebrow="Tarifas"
@@ -259,7 +260,8 @@ export function PricingView({ months, onPeriodChange }: PricingViewProps) {
 
           <div data-reveal><DesktopPricingTable months={months} /></div>
           <div data-reveal><MobilePricingCards months={months} /></div>
-      </div>
+        </div>
+      </section>
 
       <FrequentlyAskedQuestions />
     </>

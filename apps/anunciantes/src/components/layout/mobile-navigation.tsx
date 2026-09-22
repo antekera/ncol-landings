@@ -68,7 +68,7 @@ export function MobileNavigation() {
           <a
           href={EDITORIAL_CONTACT_URL}
             onClick={() => setIsOpen(false)}
-            className="mt-5 flex min-h-12 items-center justify-center bg-brand-orange px-5 py-3 text-sm font-extrabold text-brand-navy hover:bg-brand-navy hover:text-white"
+            className="mt-5 flex min-h-12 items-center justify-center bg-brand-orange px-5 py-3 text-sm font-extrabold text-white hover:bg-brand-navy"
           >
             Solicitar campaña
           </a>

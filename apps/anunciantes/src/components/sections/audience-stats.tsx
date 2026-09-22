@@ -11,20 +11,15 @@ export function AudienceStats() {
     >
       <div className="pointer-events-none absolute inset-0 -z-10 opacity-20 editorial-grid" />
       <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
-        <div className="grid gap-8 border-b border-white/15 pb-10 lg:grid-cols-[1fr_0.7fr] lg:items-end" data-reveal>
+        <div data-reveal>
           <div>
             <SectionHeading
               eyebrow="Una audiencia que ya está aquí"
-              title="Alcance reciente, presentado con contexto."
+              title="Alcance medible, presentado con contexto."
               titleId="audiencia-title"
               inverted
             />
           </div>
-          <p className="max-w-xl text-sm leading-6 text-white/65 lg:justify-self-end lg:text-base lg:leading-7">
-            Estas cifras describen períodos recientes de Noticiascol. Sirven como
-            referencia comercial y no representan un volumen mensual garantizado
-            para cada campaña.
-          </p>
         </div>
 
         <dl className="mt-10 grid grid-cols-2 border-t border-l border-white/15 lg:grid-cols-12">
@@ -60,6 +55,11 @@ export function AudienceStats() {
             </div>
           ))}
         </dl>
+        <p className="mt-5 max-w-3xl text-xs leading-5 text-white/45 sm:text-sm">
+          Estas cifras describen períodos recientes de Noticiascol. Sirven como
+          referencia comercial y no representan un volumen mensual garantizado
+          para cada campaña.
+        </p>
       </div>
     </section>
   );

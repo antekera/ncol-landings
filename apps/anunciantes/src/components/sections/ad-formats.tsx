@@ -30,14 +30,14 @@ export function AdFormats() {
               key={format.id}
               id={`formato-${format.id}`}
               data-reveal
-              className={`relative overflow-hidden rounded-2xl border p-5 shadow-[0_18px_42px_-38px_rgba(16,32,57,0.7)] sm:p-7 ${
+              className={`relative overflow-hidden rounded-2xl border p-4 shadow-[0_18px_42px_-38px_rgba(16,32,57,0.7)] sm:p-5 ${
                 format.recommended
-                  ? "border-brand-navy bg-brand-navy text-white sm:col-span-2"
+                  ? "border-brand-navy bg-brand-navy text-white"
                   : "border-border bg-surface"
               }`}
             >
               <div
-                className={`grid gap-6 ${
+                className={`grid gap-4 ${
                   format.recommended
                     ? "lg:grid-cols-[1fr_auto] lg:items-start"
                     : ""
@@ -61,14 +61,14 @@ export function AdFormats() {
                     ) : null}
                   </div>
                   <h3
-                    className={`mt-4 font-serif text-2xl font-extrabold tracking-[-0.025em] sm:text-3xl ${
+                    className={`mt-3 font-serif text-xl font-extrabold tracking-[-0.025em] sm:text-2xl ${
                       format.recommended ? "text-white" : "text-brand-navy"
                     }`}
                   >
                     {format.name}
                   </h3>
                   <p
-                    className={`mt-3 max-w-xl text-sm leading-6 sm:text-base sm:leading-7 ${
+                    className={`mt-2 max-w-xl text-sm leading-6 sm:text-base ${
                       format.recommended
                         ? "text-white/65"
                         : "text-muted-foreground"
@@ -84,7 +84,7 @@ export function AdFormats() {
               </div>
 
               <dl
-                className={`mt-7 grid grid-cols-2 border-t pt-5 text-sm ${
+                className={`mt-5 grid grid-cols-2 border-t pt-4 text-sm ${
                   format.recommended ? "border-white/15" : "border-border"
                 }`}
               >
@@ -116,7 +116,7 @@ export function AdFormats() {
 
               {format.benefits.length > 0 ? (
                 <ul
-                  className={`mt-5 flex flex-wrap gap-x-5 gap-y-2 text-xs font-bold sm:text-sm ${
+                  className={`mt-4 flex flex-wrap gap-x-4 gap-y-2 text-xs font-bold sm:text-sm ${
                     format.recommended
                       ? "text-white/80"
                       : "text-muted-foreground"
@@ -133,7 +133,7 @@ export function AdFormats() {
 
               <AdDemoButton
                 slot={format.demoTarget}
-                className={`mt-7 inline-flex min-h-11 items-center rounded-xl border px-4 py-2 text-xs font-extrabold transition-colors ${
+                className={`mt-5 inline-flex min-h-11 items-center rounded-xl border px-4 py-2 text-xs font-extrabold transition-colors ${
                   format.recommended
                     ? "border-brand-orange text-brand-orange hover:bg-white/10"
                     : "border-brand-navy text-brand-navy hover:bg-surface-muted"

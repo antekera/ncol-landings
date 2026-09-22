@@ -26,7 +26,7 @@ function ReportPreview() {
           {[
             ["Vistas", "registradas"],
             ["Clics", "registrados"],
-            ["Período", "de campaña"],
+            ["CTR", "porcentaje de clics"],
           ].map(([label, detail]) => (
             <div key={label} className="rounded-xl border border-white/10 bg-white/5 p-3 sm:p-4">
               <p className="text-[0.58rem] font-extrabold tracking-[0.1em] text-white/50 uppercase">
@@ -78,9 +78,16 @@ export function CampaignTransparency() {
           <div className="mt-9 grid gap-4 sm:grid-cols-3 lg:grid-cols-1">
             {TRANSPARENCY_FEATURES.map((feature) => (
               <div key={feature.title} className="rounded-xl border border-white/15 bg-white/5 p-4">
-                <h3 className="font-serif text-xl font-extrabold text-brand-orange">
-                  {feature.title}
-                </h3>
+                <div className="flex items-center justify-between gap-3">
+                  <h3 className="font-serif text-xl font-extrabold text-brand-orange">
+                    {feature.title}
+                  </h3>
+                  <span className="grid size-5 shrink-0 place-items-center rounded-full bg-brand-orange text-brand-navy" aria-label="Incluido">
+                    <svg aria-hidden="true" className="size-3" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" viewBox="0 0 24 24">
+                      <path d="m5 12 4 4L19 6" />
+                    </svg>
+                  </span>
+                </div>
                 <p className="mt-2 text-sm leading-6 text-white/65">{feature.description}</p>
               </div>
             ))}

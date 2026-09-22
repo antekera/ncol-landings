@@ -6,6 +6,7 @@ import type { PlanMonths } from "@/data/advertising";
 import { getPlanMonths, getPlanParam } from "@/lib/pricing";
 import { PricingView } from "./pricing-view";
 import { PricingLeadGate } from "./pricing-lead-gate";
+import { SectionHeading } from "@/components/ui/section-heading";
 
 export function PricingController() {
   const pathname = usePathname();
@@ -32,7 +33,19 @@ export function PricingController() {
   };
 
   if (!isUnlocked && !isPricingPreview) {
-    return <PricingLeadGate months={selectedMonths} onUnlocked={() => setIsUnlocked(true)} />;
+    return (
+      <section id="tarifas" aria-labelledby="tarifas-title" className="bg-background py-20 sm:py-24">
+        <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+          <SectionHeading
+            eyebrow="Tarifas"
+            title="Conoce las tarifas para tu campaña."
+            titleId="tarifas-title"
+            description="Comparte tus datos de contacto para acceder a los precios comerciales."
+          />
+          <PricingLeadGate months={selectedMonths} onUnlocked={() => setIsUnlocked(true)} />
+        </div>
+      </section>
+    );
   }
 
   return <PricingView months={selectedMonths} onPeriodChange={selectPeriod} />;

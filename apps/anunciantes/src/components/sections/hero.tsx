@@ -1,4 +1,3 @@
-import { EDITORIAL_CONTACT_URL } from "@/lib/contact";
 
 function AdPlacementShowcase() {
   return (
@@ -86,7 +85,7 @@ function AdPlacementShowcase() {
         </div>
         <div className="grid min-h-12 place-items-center border-t-2 border-brand-orange bg-[#fff3e6] p-2 text-center sm:min-h-16">
           <span className="text-[0.48rem] leading-tight font-extrabold tracking-[0.1em] text-brand-orange uppercase sm:text-[0.6rem]">
-            Sticky Bottom
+            Pegado abajo
             <small className="mt-1 block font-bold tracking-normal text-brand-navy/60">
               320 × 100
             </small>
@@ -116,8 +115,9 @@ export function Hero() {
           </h1>
           <p className="mt-6 max-w-xl text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8" data-reveal data-hero-step="3">
             Conecta tu negocio con la audiencia de Noticiascol mediante espacios
-            publicitarios visibles, contenido patrocinado y campañas pensadas
-            primero para mobile.
+            publicitarios visibles, contenido patrocinado y campañas transparentes:
+            cada vista o clic puede ser trackeado. Nacimos en 2012, para que tu
+            marca se asocie a un medio con trayectoria.
           </p>
 
           <div className="mt-8 flex flex-col gap-3 min-[390px]:flex-row" data-reveal data-hero-step="4">
@@ -134,10 +134,10 @@ export function Hero() {
               </span>
             </a>
             <a
-              href={EDITORIAL_CONTACT_URL}
+              href="#tarifas"
               className="inline-flex min-h-12 items-center justify-center rounded-xl border border-brand-navy px-6 py-3 text-sm font-extrabold text-brand-navy transition-colors hover:bg-brand-navy hover:text-white"
             >
-              Solicitar campaña
+              Ver tarifas
             </a>
           </div>
 
@@ -152,7 +152,7 @@ export function Hero() {
             </li>
             <li className="flex items-center gap-2">
               <span className="size-1.5 bg-brand-orange" aria-hidden="true" />
-              Informes reales de vistas y clics
+              Optimizado para mobile
             </li>
           </ul>
         </div>
