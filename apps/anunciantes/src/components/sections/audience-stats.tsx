@@ -1,4 +1,5 @@
 import { SectionHeading } from "@/components/ui/section-heading";
+import { StatCounter } from "@/components/ui/stat-counter";
 import { AUDIENCE_STATS } from "@/data/stats";
 
 export function AudienceStats() {
@@ -47,7 +48,11 @@ export function AudienceStats() {
                     : "text-2xl text-brand-orange sm:text-3xl"
                 }`}
               >
-                {stat.value}
+                <StatCounter
+                  value={stat.value}
+                  prefix={stat.prefix}
+                  suffix={stat.suffix}
+                />
               </dd>
               <dd className="mt-3 max-w-[18rem] text-xs leading-5 text-white/60 sm:text-sm">
                 {stat.context}
