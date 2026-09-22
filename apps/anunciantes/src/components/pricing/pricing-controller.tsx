@@ -12,6 +12,7 @@ export function PricingController() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const selectedMonths = getPlanMonths(searchParams.get("plan"));
+  const isPricingPreview = searchParams.get("prices") === "visible";
   const [isUnlocked, setIsUnlocked] = useState(false);
 
   useEffect(() => {
@@ -30,7 +31,7 @@ export function PricingController() {
     router.replace(`${pathname}?${params.toString()}`, { scroll: false });
   };
 
-  if (!isUnlocked) {
+  if (!isUnlocked && !isPricingPreview) {
     return <PricingLeadGate months={selectedMonths} onUnlocked={() => setIsUnlocked(true)} />;
   }
 
