@@ -40,9 +40,13 @@ export function FrequentlyAskedQuestions() {
                   +
                 </span>
               </summary>
-              <p className="max-w-2xl pb-6 text-sm leading-6 text-white/70 sm:text-base sm:leading-7">
-                {item.answer}
-              </p>
+              <div className="faq-answer-grid">
+                <div>
+                  <p className="max-w-2xl pb-6 text-sm leading-6 text-white/70 sm:text-base sm:leading-7">
+                    {item.answer}
+                  </p>
+                </div>
+              </div>
             </details>
           ))}
         </div>

@@ -1,4 +1,9 @@
-export const FAQ_ITEMS = [
+export type FaqItem = {
+  question: string;
+  answer: string;
+};
+
+export const FAQ_ITEMS: readonly FaqItem[] = [
   {
     question: "¿Qué incluye el valor mensual?",
     answer:
