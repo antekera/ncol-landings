@@ -107,11 +107,11 @@ export function Hero() {
       <div className="pointer-events-none absolute inset-y-0 right-0 -z-10 hidden w-[42%] border-l border-brand-blue/10 editorial-grid lg:block" />
       <div className="mx-auto grid min-h-[calc(100dvh-4rem)] max-w-7xl items-center gap-12 px-5 py-14 sm:px-6 sm:py-20 lg:min-h-[calc(100dvh-4.5rem)] lg:grid-cols-[0.88fr_1.12fr] lg:gap-10 lg:px-8 lg:py-16">
         <div className="max-w-2xl">
-          <p className="flex items-center gap-3 text-xs font-extrabold tracking-[0.18em] text-brand-blue uppercase sm:text-sm" data-reveal data-hero-step="1">
+          <p className="flex items-center gap-3 text-xs font-extrabold tracking-[0.18em] text-brand-blue uppercase sm:text-sm" data-reveal data-hero-step="2">
             <span className="h-px w-8 bg-brand-orange" aria-hidden="true" />
             Publicidad digital en Noticiascol
           </p>
-          <h1 className="mt-6 max-w-[12ch] font-serif text-[2.65rem] leading-[1.02] font-extrabold tracking-[-0.045em] text-brand-navy min-[375px]:text-5xl sm:text-6xl lg:text-[4.4rem]" data-reveal data-hero-step="2">
+          <h1 className="mt-6 max-w-[12ch] font-serif text-[2.65rem] leading-[1.02] font-extrabold tracking-[-0.045em] text-brand-navy min-[375px]:text-5xl sm:text-6xl lg:text-[4.4rem]" data-reveal data-hero-step="1">
             Tu marca, donde está la noticia.
           </h1>
           <p className="mt-6 max-w-xl text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8" data-reveal data-hero-step="3">
