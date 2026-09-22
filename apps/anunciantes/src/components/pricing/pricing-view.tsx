@@ -261,12 +261,6 @@ export function PricingView({ months, onPeriodChange }: PricingViewProps) {
 
           <div data-reveal><DesktopPricingTable months={months} /></div>
           <div data-reveal><MobilePricingCards months={months} /></div>
-          <p
-            data-reveal
-            className="mt-6 border-l-2 border-brand-orange pl-4 text-sm leading-6 text-muted-foreground"
-          >
-            Aceptamos pago móvil, Zelle, Binance y PayPal como medios de pago.
-          </p>
         </div>
       </section>
 

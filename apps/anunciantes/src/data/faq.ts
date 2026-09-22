@@ -7,7 +7,7 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
   {
     question: "¿Qué incluye el valor mensual?",
     answer:
-      "El valor corresponde a un mes de presencia en el formato seleccionado. La tabla muestra también el compromiso total del plan de 1, 3 o 6 meses.",
+      "El valor corresponde a un mes de presencia en el formato seleccionado. La tabla muestra también el compromiso total de los planes de 30, 90 o 180 días.",
   },
   {
     question: "¿Las tarifas garantizan una cantidad de impresiones?",
@@ -23,6 +23,11 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
     question: "¿Cómo preparo las piezas de mi campaña?",
     answer:
       "Cada formato indica sus dimensiones para desktop y mobile. Antes de iniciar la campaña, el equipo comercial coordina contigo las piezas y los requisitos técnicos aplicables.",
+  },
+  {
+    question: "¿Qué medios de pago aceptan?",
+    answer:
+      "Aceptamos pago móvil, Zelle, Binance y PayPal como medios de pago.",
   },
   {
     question: "¿El demostrador registra impresiones o clics reales?",
