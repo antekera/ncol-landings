@@ -106,6 +106,35 @@ body {
   .motion-ready [data-reveal]:nth-child(3n) {
     transition-delay: 120ms;
   }
+
+  .motion-ready [data-hero-step="1"] {
+    transition-delay: 60ms;
+  }
+
+  .motion-ready [data-hero-step="2"] {
+    transition-delay: 150ms;
+  }
+
+  .motion-ready [data-hero-step="3"] {
+    transition-delay: 270ms;
+  }
+
+  .motion-ready [data-hero-step="4"] {
+    transition-delay: 390ms;
+  }
+
+  .motion-ready [data-hero-step="5"] {
+    transition-delay: 500ms;
+  }
+
+  .motion-ready [data-hero-step="6"] {
+    transition-delay: 230ms;
+    transform: translateX(1.25rem) scale(0.98);
+  }
+
+  .motion-ready [data-hero-step="6"][data-revealed="true"] {
+    transform: translateX(0) scale(1);
+  }
 }
 
 .ad-demo-dialog {

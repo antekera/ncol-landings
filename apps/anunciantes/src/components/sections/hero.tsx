@@ -106,21 +106,21 @@ export function Hero() {
     <section id="inicio" className="relative isolate overflow-hidden bg-surface">
       <div className="pointer-events-none absolute inset-y-0 right-0 -z-10 hidden w-[42%] border-l border-brand-blue/10 editorial-grid lg:block" />
       <div className="mx-auto grid min-h-[calc(100dvh-4rem)] max-w-7xl items-center gap-12 px-5 py-14 sm:px-6 sm:py-20 lg:min-h-[calc(100dvh-4.5rem)] lg:grid-cols-[0.88fr_1.12fr] lg:gap-10 lg:px-8 lg:py-16">
-        <div className="max-w-2xl" data-reveal>
-          <p className="flex items-center gap-3 text-xs font-extrabold tracking-[0.18em] text-brand-blue uppercase sm:text-sm">
+        <div className="max-w-2xl">
+          <p className="flex items-center gap-3 text-xs font-extrabold tracking-[0.18em] text-brand-blue uppercase sm:text-sm" data-reveal data-hero-step="1">
             <span className="h-px w-8 bg-brand-orange" aria-hidden="true" />
             Publicidad digital en Noticiascol
           </p>
-          <h1 className="mt-6 max-w-[12ch] font-serif text-[2.65rem] leading-[1.02] font-extrabold tracking-[-0.045em] text-brand-navy min-[375px]:text-5xl sm:text-6xl lg:text-[4.4rem]">
+          <h1 className="mt-6 max-w-[12ch] font-serif text-[2.65rem] leading-[1.02] font-extrabold tracking-[-0.045em] text-brand-navy min-[375px]:text-5xl sm:text-6xl lg:text-[4.4rem]" data-reveal data-hero-step="2">
             Tu marca, donde está la noticia.
           </h1>
-          <p className="mt-6 max-w-xl text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8">
+          <p className="mt-6 max-w-xl text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8" data-reveal data-hero-step="3">
             Conecta tu negocio con la audiencia de Noticiascol mediante espacios
             publicitarios visibles, contenido patrocinado y campañas pensadas
             primero para mobile.
           </p>
 
-          <div className="mt-8 flex flex-col gap-3 min-[390px]:flex-row">
+          <div className="mt-8 flex flex-col gap-3 min-[390px]:flex-row" data-reveal data-hero-step="4">
             <a
               href="#formatos"
               className="group inline-flex min-h-12 items-center justify-center gap-3 rounded-xl bg-brand-blue px-6 py-3 text-sm font-extrabold text-white transition-colors hover:bg-brand-navy"
@@ -141,7 +141,7 @@ export function Hero() {
             </a>
           </div>
 
-          <ul className="mt-8 flex flex-wrap gap-x-5 gap-y-2 border-t border-border pt-5 text-xs font-bold text-muted-foreground sm:text-sm">
+          <ul className="mt-8 flex flex-wrap gap-x-5 gap-y-2 border-t border-border pt-5 text-xs font-bold text-muted-foreground sm:text-sm" data-reveal data-hero-step="5">
             <li className="flex items-center gap-2">
               <span className="size-1.5 bg-brand-orange" aria-hidden="true" />
               Audiencia local
@@ -157,7 +157,7 @@ export function Hero() {
           </ul>
         </div>
 
-        <div className="relative -mx-1 sm:mx-0" data-reveal>
+        <div className="relative -mx-1 sm:mx-0" data-reveal data-hero-step="6">
           <span className="absolute -top-7 right-0 hidden text-xs font-extrabold tracking-[0.2em] text-brand-gray uppercase [writing-mode:vertical-rl] sm:-right-4 sm:block">
             Espacios reales
           </span>
