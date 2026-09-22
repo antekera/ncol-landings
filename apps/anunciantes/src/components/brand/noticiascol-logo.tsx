@@ -1,22 +1,16 @@
-import Image from "next/image";
+import LogoCom from "@/components/brand/noticiascol-logo-plain";
 
 type NoticiascolLogoProps = {
   className?: string;
-  priority?: boolean;
 };
 
-export function NoticiascolLogo({
-  className,
-  priority = false,
-}: NoticiascolLogoProps) {
+export function NoticiascolLogo({ className }: NoticiascolLogoProps) {
   return (
-    <Image
-      src="/brand/noticiascol-logo.svg"
+    <LogoCom
       alt="Noticiascol.com"
-      width={677}
-      height={113}
+      width={600}
+      height={72}
       className={className}
-      priority={priority}
     />
   );
 }

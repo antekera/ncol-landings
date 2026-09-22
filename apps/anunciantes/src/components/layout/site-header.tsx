@@ -12,7 +12,7 @@ export function SiteHeader() {
           aria-label="Noticiascol para Anunciantes, ir al inicio"
           className="flex min-w-0 items-center gap-3"
         >
-          <NoticiascolLogo priority className="h-auto w-[7.5rem] sm:w-40" />
+          <NoticiascolLogo className="h-auto w-[8.5rem] sm:w-44" />
           <span className="hidden border-l border-border pl-3 text-[0.68rem] leading-none font-extrabold tracking-[0.16em] text-brand-navy uppercase min-[430px]:block">
             Para
             <br />
