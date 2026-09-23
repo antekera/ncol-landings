@@ -13,7 +13,8 @@ export const TRANSPARENCY_FEATURES: readonly TransparencyFeature[] = [
     description: "Identifica las interacciones que genera la ubicación contratada.",
   },
   {
-    title: "Período claro",
-    description: "Recibe datos asociados al período específico de publicación.",
+    title: "Informes por correo",
+    description:
+      "Recibe por correo informes diarios o semanales sobre la actividad de tu banner.",
   },
 ];

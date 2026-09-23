@@ -11,7 +11,21 @@ export const AD_DEMO_READY_MESSAGE = "ncol-ad-demo-ready";
 
 export function getAdDemoUrl(slot: AdSlotId) {
   const url = new URL(AD_DEMO_ARTICLE_URL);
-  url.searchParams.set("ver-banners", "");
+
+  if (
+    process.env.NODE_ENV === "development" &&
+    typeof window !== "undefined" &&
+    (!process.env.NEXT_PUBLIC_AD_DEMO_ARTICLE_URL ||
+      url.hostname === "localhost" ||
+      url.hostname === "127.0.0.1" ||
+      url.hostname === "0.0.0.0")
+  ) {
+    url.protocol = window.location.protocol;
+    url.hostname = window.location.hostname;
+    url.port = "3011";
+  }
+
+  url.searchParams.set("ver-banners", "1");
   url.searchParams.set("focus", slot);
   return url.toString();
 }

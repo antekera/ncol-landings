@@ -20,6 +20,7 @@ import {
   ADVERTISING_FORMATS,
   type AdSlotId,
 } from "@/data/advertising";
+import { trackAnalyticsEvent } from "@/lib/analytics";
 
 type AdDemoContextValue = {
   openDemo: (slot: AdSlotId) => void;
@@ -39,10 +40,13 @@ export function AdDemoProvider({ children }: { children: ReactNode }) {
   const triggerRef = useRef<HTMLElement | null>(null);
   const savedScrollRef = useRef(0);
   const previousOverflowRef = useRef("");
+  const readyTrackedSlotRef = useRef<AdSlotId | null>(null);
   const [slot, setSlot] = useState<AdSlotId | null>(null);
   const [isLoading, setIsLoading] = useState(false);
 
   const openDemo = useCallback((nextSlot: AdSlotId) => {
+    trackAnalyticsEvent("ad_demo_open", { slot: nextSlot });
+    readyTrackedSlotRef.current = null;
     triggerRef.current =
       document.activeElement instanceof HTMLElement
         ? document.activeElement
@@ -89,7 +93,10 @@ export function AdDemoProvider({ children }: { children: ReactNode }) {
   }, []);
 
   useEffect(() => {
-    const expectedOrigin = new URL(AD_DEMO_ARTICLE_URL).origin;
+    const expectedOrigin = new URL(
+      iframeRef.current?.src ?? AD_DEMO_ARTICLE_URL,
+      window.location.href,
+    ).origin;
     const handleMessage = (event: MessageEvent) => {
       if (
         event.origin !== expectedOrigin ||
@@ -104,6 +111,10 @@ export function AdDemoProvider({ children }: { children: ReactNode }) {
         event.data?.slot === slot
       ) {
         setIsLoading(false);
+        if (slot && readyTrackedSlotRef.current !== slot) {
+          readyTrackedSlotRef.current = slot;
+          trackAnalyticsEvent("ad_demo_view", { slot });
+        }
       }
     };
 
@@ -121,6 +132,12 @@ export function AdDemoProvider({ children }: { children: ReactNode }) {
     setSlot(null);
     setIsLoading(false);
     document.body.style.overflow = previousOverflowRef.current;
+
+    const url = new URL(window.location.href);
+    if (url.searchParams.has("slot")) {
+      url.searchParams.delete("slot");
+      window.history.replaceState(window.history.state, "", url);
+    }
 
     requestAnimationFrame(() => {
       window.scrollTo({ top: savedScrollRef.current, behavior: "instant" });
@@ -168,10 +185,12 @@ export function AdDemoProvider({ children }: { children: ReactNode }) {
               ref={closeButtonRef}
               type="button"
               onClick={closeDemo}
-              className="inline-flex min-h-11 shrink-0 items-center gap-2 border border-brand-navy px-3 py-2 text-xs font-extrabold text-brand-navy hover:bg-surface-muted"
+              aria-label="Cerrar demostración"
+              className="inline-flex size-11 shrink-0 items-center justify-center rounded-full border border-brand-navy text-brand-navy transition-colors hover:bg-surface-muted"
             >
-              <span aria-hidden="true">×</span>
-              Cerrar
+              <span aria-hidden="true" className="text-2xl leading-none">
+                ×
+              </span>
             </button>
           </header>
 

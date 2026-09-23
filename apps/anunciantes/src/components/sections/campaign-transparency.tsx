@@ -71,7 +71,7 @@ export function CampaignTransparency() {
             eyebrow="Transparencia de campaña"
             title="Vistas y clics que puedes comprobar."
             titleId="transparencia-title"
-            description="Noticiascol cuenta con un sistema propio para registrar la actividad de los banners. Es una ventaja concreta frente a los reportes opacos que suelen acompañar a los medios tradicionales."
+            description="Noticiascol cuenta con un sistema propio para registrar la actividad de los banners, lo que representa una ventaja frente a los reportes opacos que suelen acompañar a los medios tradicionales."
             inverted
           />
 

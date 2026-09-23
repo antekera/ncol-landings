@@ -15,7 +15,7 @@ export function Benefits() {
             eyebrow="Por qué Noticiascol"
             title="Presencia comercial dentro de la conversación local."
             titleId="beneficios-title"
-            description="Una campaña puede unir visibilidad editorial, formatos adaptados a mobile y medición útil, sin promesas que el medio no pueda sostener."
+            description="Una campaña puede combinar visibilidad editorial y formatos adaptados a dispositivos móviles, con medición útil para dirigir a la audiencia hacia tu sitio web, app o redes sociales."
           />
         </div>
 

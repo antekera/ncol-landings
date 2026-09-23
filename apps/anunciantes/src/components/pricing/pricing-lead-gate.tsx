@@ -2,6 +2,7 @@
 
 import { useState, type FormEvent } from "react";
 import type { PlanMonths } from "@/data/advertising";
+import { trackAnalyticsEvent } from "@/lib/analytics";
 
 type PricingLeadGateProps = {
   months: PlanMonths;
@@ -38,6 +39,10 @@ export function PricingLeadGate({ months, onUnlocked }: PricingLeadGateProps) {
       return;
     }
 
+    trackAnalyticsEvent("commercial_lead_submit", {
+      plan_months: months,
+      plan_duration_days: months * 30,
+    });
     window.sessionStorage.setItem("ncol-advertisers-pricing-unlocked", "true");
     onUnlocked();
   };

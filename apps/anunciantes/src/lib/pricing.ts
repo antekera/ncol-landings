@@ -42,6 +42,12 @@ export function formatUsd(value: number) {
   }).format(value)}`;
 }
 
+export function formatVisits(value: number) {
+  return new Intl.NumberFormat("es-VE", {
+    maximumFractionDigits: 0,
+  }).format(value);
+}
+
 export function getPlanLabel(months: PlanMonths) {
   return `Plan ${PLAN_PERIOD_LABELS[months]}`;
 }

@@ -10,27 +10,26 @@ export type AudienceStat = {
 export const AUDIENCE_STATS: readonly AudienceStat[] = [
   {
     value: 250000,
-    prefix: "Más de ",
+    suffix: " +",
     label: "Páginas vistas",
     context: "vistas cada mes",
     featured: true,
   },
   {
     value: 100000,
-    prefix: "Más de ",
+    suffix: " +",
     label: "Usuarios nuevos",
     context: "mensual",
   },
   {
     value: 80,
-    prefix: "Aprox. ",
     suffix: "%",
     label: "Tráfico mobile",
     context: "una audiencia conectada desde su teléfono",
   },
   {
     value: 150000,
-    prefix: "Aprox. más de ",
+    suffix: " +",
     label: "Seguidores en redes sociales",
     context: "promedio de 8 millones de visitas en Instagram",
   },

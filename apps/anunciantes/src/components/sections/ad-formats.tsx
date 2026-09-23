@@ -18,9 +18,9 @@ export function AdFormats() {
             titleId="formatos-title"
           />
           <p className="max-w-xl text-sm leading-6 text-muted-foreground lg:justify-self-end lg:text-base lg:leading-7">
-            Cada formato conserva sus medidas reales de Noticiascol. En mobile se
-            utiliza la variante indicada para cuidar la lectura y el espacio de la
-            campaña.
+            Contamos con distintos formatos integrados a la experiencia de lectura,
+            pensados para dar visibilidad a tu marca sin interrumpir ni incomodar al
+            lector.
           </p>
         </div>
 
@@ -142,6 +142,10 @@ export function AdFormats() {
             </article>
           ))}
         </div>
+
+        <p className="mt-6 text-xs leading-5 text-muted-foreground sm:text-sm" data-reveal>
+          Formatos de imagen aceptados: JPG, PNG y GIF.
+        </p>
       </div>
     </section>
   );

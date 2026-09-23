@@ -14,8 +14,8 @@ export function AudienceStats() {
         <div data-reveal>
           <div>
             <SectionHeading
-              eyebrow="Una audiencia que ya está aquí"
-              title="Alcance medible, presentado con contexto."
+              eyebrow="Una audiencia consolidada"
+              title="Alcance medible con métricas transparentes"
               titleId="audiencia-title"
               inverted
             />

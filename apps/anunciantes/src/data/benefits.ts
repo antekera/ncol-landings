@@ -27,7 +27,7 @@ export const COMMERCIAL_BENEFITS: readonly CommercialBenefit[] = [
     title: "Informes con datos reales",
     icon: "report",
     description:
-      "Recibe informes con vistas y clics reales de tu campaña, junto con su período de publicación.",
+      "Recibe informes con vistas y clics reales de tu campaña durante el período de publicación.",
   },
   {
     title: "Visibilidad conocida",
@@ -39,6 +39,6 @@ export const COMMERCIAL_BENEFITS: readonly CommercialBenefit[] = [
     title: "Web, redes y contenido",
     icon: "channels",
     description:
-      "Combina presencia en el sitio, beneficios sociales y artículos patrocinados según el formato.",
+      "Combina presencia en el sitio web, redes sociales y artículos patrocinados según el formato.",
   },
 ];

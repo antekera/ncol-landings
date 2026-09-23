@@ -1,5 +1,4 @@
 import { SectionHeading } from "@/components/ui/section-heading";
-import { VisibilityBadge } from "@/components/ui/visibility-badge";
 import {
   ADVERTISING_FORMATS,
   PLAN_PERIOD_LABELS,
@@ -8,6 +7,7 @@ import {
 } from "@/data/advertising";
 import {
   formatUsd,
+  formatVisits,
   getPlanLabel,
   getPlanPricing,
 } from "@/lib/pricing";
@@ -117,22 +117,37 @@ function Price({
   );
 }
 
+function GuaranteedVisits({
+  monthlyMinimum,
+  months,
+}: {
+  monthlyMinimum: number;
+  months: PlanMonths;
+}) {
+  const planMinimum = monthlyMinimum * months;
+
+  return (
+    <p className="mt-3 text-xs leading-5 text-muted-foreground">
+      <span className="font-extrabold text-brand-navy">
+        Más de {formatVisits(planMinimum)} vistas garantizadas
+      </span>
+    </p>
+  );
+}
+
 function DesktopPricingTable({ months }: Pick<PricingViewProps, "months">) {
   return (
     <div className="mt-12 hidden overflow-hidden rounded-2xl border border-border shadow-[0_20px_54px_-42px_rgba(16,32,57,0.55)] lg:block">
       <table className="w-full border-collapse text-left">
         <thead className="bg-brand-navy text-white">
           <tr className="text-[0.65rem] font-extrabold tracking-[0.12em] uppercase">
-            <th scope="col" className="w-[29%] px-6 py-4">
+            <th scope="col" className="w-[34%] px-6 py-4">
               Formato
             </th>
-            <th scope="col" className="w-[19%] px-6 py-4">
-              Visibilidad
+            <th scope="col" className="w-[25%] px-6 py-4">
+              Visitas mínimas
             </th>
-            <th scope="col" className="w-[24%] px-6 py-4">
-              Incluye
-            </th>
-            <th scope="col" className="w-[28%] px-6 py-4">
+            <th scope="col" className="w-[41%] px-6 py-4">
               Precio
             </th>
           </tr>
@@ -160,23 +175,10 @@ function DesktopPricingTable({ months }: Pick<PricingViewProps, "months">) {
                   </div>
                 </th>
                 <td className="px-6 py-6">
-                  <VisibilityBadge visibility={format.visibility} />
-                </td>
-                <td className="px-6 py-6 text-sm leading-6 text-muted-foreground">
-                  {format.benefits.length > 0 ? (
-                    <ul className="space-y-1.5">
-                      {format.benefits.map((benefit) => (
-                        <li key={benefit} className="flex gap-2">
-                          <span className="text-brand-orange" aria-hidden="true">
-                            +
-                          </span>
-                          {benefit}
-                        </li>
-                      ))}
-                    </ul>
-                  ) : (
-                    <span aria-label="Sin beneficios sociales adicionales">—</span>
-                  )}
+                  <GuaranteedVisits
+                    monthlyMinimum={format.minimumGuaranteedVisitsPerMonth}
+                    months={months}
+                  />
                 </td>
                 <td className="px-6 py-6">
                   <Price formatId={format.id} months={months} {...pricing} />
@@ -213,25 +215,17 @@ function MobilePricingCards({ months }: Pick<PricingViewProps, "months">) {
                   </span>
                 ) : null}
               </div>
-              <VisibilityBadge visibility={format.visibility} />
+              <div className="text-right">
+                <GuaranteedVisits
+                  monthlyMinimum={format.minimumGuaranteedVisitsPerMonth}
+                  months={months}
+                />
+              </div>
             </div>
 
             <div className="mt-6">
               <Price formatId={format.id} months={months} {...pricing} />
             </div>
-
-            {format.benefits.length > 0 ? (
-              <ul className="mt-6 space-y-2 border-t border-border pt-5 text-sm text-muted-foreground">
-                {format.benefits.map((benefit) => (
-                  <li key={benefit} className="flex gap-2">
-                    <span className="font-bold text-brand-orange" aria-hidden="true">
-                      +
-                    </span>
-                    {benefit}
-                  </li>
-                ))}
-              </ul>
-            ) : null}
 
           </article>
         );

@@ -12,7 +12,7 @@ export function SiteHeader() {
   )!;
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border bg-surface/95 backdrop-blur-md">
+    <header className="sticky top-0 z-50 shrink-0 border-b border-border bg-surface">
       <div className="mx-auto flex h-16 max-w-7xl items-center gap-3 px-4 sm:h-[4.5rem] sm:px-6 lg:px-8">
         <a
           href="#inicio"
@@ -29,6 +29,9 @@ export function SiteHeader() {
 
         <a
           href={EDITORIAL_CONTACT_URL}
+          data-ga-event="contact_click"
+          data-ga-param-location="header"
+          data-ga-param-channel="website"
           className="ml-auto hidden min-h-11 shrink-0 items-center justify-center rounded-xl bg-brand-orange px-5 text-sm font-extrabold text-white transition-colors hover:bg-brand-navy lg:inline-flex"
         >
           Contáctanos
@@ -36,6 +39,9 @@ export function SiteHeader() {
 
         <a
           href={whatsappUrl}
+          data-ga-event="contact_click"
+          data-ga-param-location="header"
+          data-ga-param-channel="whatsapp"
           target="_blank"
           rel="noreferrer"
           className="ml-auto inline-flex min-h-11 shrink-0 items-center justify-center gap-2 rounded-xl bg-[#25D366] px-3 text-xs font-extrabold text-white transition-colors hover:bg-[#1ebe5b] sm:px-4 sm:text-sm lg:hidden"

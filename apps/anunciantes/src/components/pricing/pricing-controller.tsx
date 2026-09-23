@@ -7,6 +7,7 @@ import { getPlanMonths, getPlanParam } from "@/lib/pricing";
 import { PricingView } from "./pricing-view";
 import { PricingLeadGate } from "./pricing-lead-gate";
 import { SectionHeading } from "@/components/ui/section-heading";
+import { trackAnalyticsEvent } from "@/lib/analytics";
 
 export function PricingController() {
   const pathname = usePathname();
@@ -27,6 +28,10 @@ export function PricingController() {
   }, []);
 
   const selectPeriod = (months: PlanMonths) => {
+    trackAnalyticsEvent("pricing_period_change", {
+      plan_months: months,
+      plan_duration_days: months * 30,
+    });
     const params = new URLSearchParams(searchParams.toString());
     params.set("plan", getPlanParam(months));
     router.replace(`${pathname}?${params.toString()}`, { scroll: false });

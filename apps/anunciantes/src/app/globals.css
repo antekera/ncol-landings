@@ -115,18 +115,30 @@ body {
   grid-template-rows: 0fr;
   opacity: 0;
   transition:
-    grid-template-rows 280ms cubic-bezier(0.2, 0.75, 0.25, 1),
-    opacity 180ms ease;
+    grid-template-rows 420ms cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 260ms ease;
 }
 
 .faq-answer-grid > div {
   overflow: hidden;
+  transform: translateY(-0.4rem);
+  transition: transform 360ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-details[open] .faq-answer-grid {
+.faq-answer-grid[data-open="true"] {
   grid-template-rows: 1fr;
   opacity: 1;
-  transition-duration: 360ms, 240ms;
+}
+
+.faq-answer-grid[data-open="true"] > div {
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .faq-answer-grid,
+  .faq-answer-grid > div {
+    transition: none;
+  }
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -151,38 +163,9 @@ details[open] .faq-answer-grid {
     transition-delay: 120ms;
   }
 
-  .motion-ready [data-hero-step="1"] {
-    transition-delay: 40ms;
-  }
-
-  .motion-ready [data-hero-step="2"] {
-    transition-delay: 220ms;
-  }
-
-  .motion-ready [data-hero-step="3"] {
-    transition-delay: 360ms;
-  }
-
-  .motion-ready [data-hero-step="4"] {
-    transition-delay: 500ms;
-  }
-
-  .motion-ready [data-hero-step="5"] {
-    transition-delay: 640ms;
-  }
-
-  .motion-ready [data-hero-step="6"] {
-    transition-delay: 440ms;
-    transform: translateX(1.25rem) scale(0.98);
-  }
-
-  .motion-ready [data-hero-step="6"][data-revealed="true"] {
-    transform: translateX(0) scale(1);
-  }
-
   #inicio [data-hero-step] {
     opacity: 0;
-    animation: hero-fade-in 620ms cubic-bezier(0.2, 0.75, 0.25, 1) forwards;
+    animation: hero-fade-in 620ms cubic-bezier(0.2, 0.75, 0.25, 1) both;
   }
 
   #inicio [data-hero-step="1"] {

@@ -32,7 +32,7 @@ function AdPlacementShowcase() {
                 Espacio publicitario
               </span>
               <span className="mt-1 block text-[0.55rem] font-bold text-brand-navy/65 sm:text-xs">
-                HEADER · 970 × 250
+                Banner superior · 970 × 250 px
               </span>
             </div>
           </div>
@@ -42,8 +42,8 @@ function AdPlacementShowcase() {
               <span className="text-[0.55rem] font-extrabold tracking-[0.16em] text-brand-blue uppercase sm:text-[0.65rem]">
                 Actualidad
               </span>
-              <div className="mt-2 h-3 w-[92%] bg-brand-navy sm:h-4" />
-              <div className="mt-1.5 h-3 w-[68%] bg-brand-navy sm:h-4" />
+              <div className="mt-2 h-3 w-[92%] bg-brand-gray sm:h-4" />
+              <div className="mt-1.5 h-3 w-[68%] bg-brand-gray sm:h-4" />
               <div className="mt-3 aspect-[16/7] bg-surface-muted editorial-grid" />
               <div className="mt-3 space-y-1.5" aria-hidden="true">
                 <div className="h-1.5 w-full bg-brand-navy/15" />
@@ -54,10 +54,10 @@ function AdPlacementShowcase() {
             <div className="grid min-h-40 place-items-center border border-dashed border-brand-blue bg-[#f3f9fd] p-2 text-center sm:min-h-56">
               <div>
                 <span className="block text-[0.5rem] font-extrabold tracking-[0.12em] text-brand-blue uppercase sm:text-[0.6rem]">
-                  Sidebar
+                  Banner lateral
                 </span>
                 <span className="mt-1 block text-[0.5rem] text-brand-navy/60 sm:text-[0.6rem]">
-                  300 × 600
+                  300 × 600 px
                 </span>
               </div>
             </div>
@@ -75,8 +75,8 @@ function AdPlacementShowcase() {
             <span className="h-1 w-4 bg-brand-navy/20" />
           </div>
           <div className="mt-2 h-1.5 w-10 bg-brand-blue" />
-          <div className="mt-1.5 h-2 w-full bg-brand-navy" />
-          <div className="mt-1 h-2 w-4/5 bg-brand-navy" />
+          <div className="mt-1.5 h-2 w-full bg-brand-gray" />
+          <div className="mt-1 h-2 w-4/5 bg-brand-gray" />
           <div className="mt-2 aspect-[4/3] bg-surface-muted editorial-grid" />
           <div className="mt-2 space-y-1" aria-hidden="true">
             <div className="h-1 w-full bg-brand-navy/15" />
@@ -85,9 +85,9 @@ function AdPlacementShowcase() {
         </div>
         <div className="grid min-h-12 place-items-center border-t-2 border-brand-orange bg-[#fff3e6] p-2 text-center sm:min-h-16">
           <span className="text-[0.48rem] leading-tight font-extrabold tracking-[0.1em] text-brand-orange uppercase sm:text-[0.6rem]">
-            Pegado abajo
+            Banner fijo
             <small className="mt-1 block font-bold tracking-normal text-brand-navy/60">
-              320 × 100
+              320 × 100 px
             </small>
           </span>
         </div>
@@ -106,49 +106,49 @@ export function Hero() {
       <div className="pointer-events-none absolute inset-y-0 right-0 -z-10 hidden w-[42%] border-l border-brand-blue/10 editorial-grid lg:block" />
       <div className="mx-auto grid min-h-[calc(100dvh-4rem)] max-w-7xl items-center gap-12 px-5 py-14 sm:px-6 sm:py-20 lg:min-h-[calc(100dvh-4.5rem)] lg:grid-cols-[0.88fr_1.12fr] lg:gap-10 lg:px-8 lg:py-16">
         <div className="max-w-2xl">
-          <p className="flex items-center gap-3 text-xs font-extrabold tracking-[0.18em] text-brand-blue uppercase sm:text-sm" data-reveal data-hero-step="2">
+          <p className="flex items-center gap-3 text-xs font-extrabold tracking-[0.18em] text-brand-blue uppercase sm:text-sm" data-hero-step="2">
             <span className="h-px w-8 bg-brand-orange" aria-hidden="true" />
             Publicidad digital en Noticiascol
           </p>
-          <h1 className="mt-6 max-w-[12ch] font-serif text-[2.65rem] leading-[1.02] font-extrabold tracking-[-0.045em] text-brand-navy min-[375px]:text-5xl sm:text-6xl lg:text-[4.4rem]" data-reveal data-hero-step="1">
+          <h1 className="mt-6 max-w-[12ch] font-serif text-[2.65rem] leading-[1.02] font-extrabold tracking-[-0.045em] text-brand-navy min-[375px]:text-5xl sm:text-6xl lg:text-[4.4rem]" data-hero-step="1">
             Tu marca, donde está la noticia.
           </h1>
-          <p className="mt-6 max-w-xl text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8" data-reveal data-hero-step="3">
-            Conecta tu negocio con la audiencia de Noticiascol mediante espacios
-            publicitarios visibles, contenido patrocinado y campañas transparentes:
-            cada vista o clic puede ser trackeado. Nacimos en 2012, para que tu
-            marca se asocie a un medio con trayectoria.
+          <p className="mt-6 max-w-xl text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8" data-hero-step="3">
+            Conecta tu negocio con la audiencia de uno de los sitios web de
+            noticias más visitados del occidente venezolano, activo desde 2012.
+            Cada vista y clic de tu campaña se contabilizan para que midas
+            la interacción con tu marca.
           </p>
 
-          <div className="mt-8 flex flex-col gap-3 min-[390px]:flex-row" data-reveal data-hero-step="4">
+          <div className="mt-8 flex flex-col gap-3 min-[390px]:flex-row" data-hero-step="4">
             <a
               href="#formatos"
-              className="group inline-flex min-h-12 items-center justify-center gap-3 rounded-xl bg-brand-blue px-6 py-3 text-sm font-extrabold text-white transition-colors hover:bg-brand-navy"
+              data-ga-event="cta_click"
+              data-ga-param-location="hero"
+              data-ga-param-destination="formats"
+              className="inline-flex min-h-12 items-center justify-center rounded-xl bg-brand-blue px-6 py-3 text-sm font-extrabold text-white transition-colors hover:bg-brand-navy"
             >
               Ver formatos
-              <span
-                aria-hidden="true"
-                className="text-brand-orange transition-transform group-hover:translate-x-1"
-              >
-                →
-              </span>
             </a>
             <a
               href="#tarifas"
+              data-ga-event="cta_click"
+              data-ga-param-location="hero"
+              data-ga-param-destination="pricing"
               className="inline-flex min-h-12 items-center justify-center rounded-xl border border-brand-navy px-6 py-3 text-sm font-extrabold text-brand-navy transition-colors hover:bg-brand-navy hover:text-white"
             >
               Ver tarifas
             </a>
           </div>
 
-          <ul className="mt-8 flex flex-wrap gap-x-5 gap-y-2 border-t border-border pt-5 text-xs font-bold text-muted-foreground sm:text-sm" data-reveal data-hero-step="5">
+          <ul className="mt-8 flex flex-wrap gap-x-5 gap-y-2 border-t border-border pt-5 text-xs font-bold text-muted-foreground sm:text-sm" data-hero-step="5">
             <li className="flex items-center gap-2">
               <span className="size-1.5 bg-brand-orange" aria-hidden="true" />
               Audiencia local
             </li>
             <li className="flex items-center gap-2">
               <span className="size-1.5 bg-brand-orange" aria-hidden="true" />
-              Web + redes
+              Web + redes sociales
             </li>
             <li className="flex items-center gap-2">
               <span className="size-1.5 bg-brand-orange" aria-hidden="true" />
@@ -157,10 +157,7 @@ export function Hero() {
           </ul>
         </div>
 
-        <div className="relative -mx-1 sm:mx-0" data-reveal data-hero-step="6">
-          <span className="absolute -top-7 right-0 hidden text-xs font-extrabold tracking-[0.2em] text-brand-gray uppercase [writing-mode:vertical-rl] sm:-right-4 sm:block">
-            Espacios reales
-          </span>
+        <div className="relative -mx-1 sm:mx-0" data-hero-step="6">
           <AdPlacementShowcase />
         </div>
       </div>
