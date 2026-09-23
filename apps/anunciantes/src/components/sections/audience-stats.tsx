@@ -61,6 +61,13 @@ export function AudienceStats() {
           referencia comercial y no representan un volumen mensual garantizado
           para cada campaña.
         </p>
+        <a
+          href="/visitas"
+          className="mt-5 inline-flex min-h-11 items-center gap-2 rounded-full border border-white/25 px-5 text-sm font-extrabold text-white transition-colors hover:border-white hover:bg-white/10"
+        >
+          Explorar panel de visitas
+          <span aria-hidden="true">↗</span>
+        </a>
       </div>
     </section>
   );
