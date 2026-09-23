@@ -1,7 +1,7 @@
 import type { AdSlotId } from "@/data/advertising";
 
 const DEFAULT_DEMO_ARTICLE =
-  "https://www.noticiascol.com/2026/09/21/gobierno-bolivariano-y-poder-popular-benefician-a-1-900-familias-de-tierra-negra-con-jornada-de-amor-y-prosperidad-comunal/";
+  "https://www.noticiascol.com/2026/09/22/adultos-mayores-en-venezuela-asi-pueden-renovar-su-cedula-en-el-saime-sin-cita-previa/";
 
 export const AD_DEMO_ARTICLE_URL =
   process.env.NEXT_PUBLIC_AD_DEMO_ARTICLE_URL ?? DEFAULT_DEMO_ARTICLE;
