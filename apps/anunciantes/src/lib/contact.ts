@@ -1,6 +1,7 @@
 export const EDITORIAL_CONTACT_URL = "https://www.noticiascol.com/contacto/";
 
-export const WHATSAPP_ADVISOR_MESSAGE = "Contactar un asesor";
+export const WHATSAPP_ADVISOR_MESSAGE =
+  "Hola, quisiera recibir más información sobre las opciones de publicidad en Noticiascol.com.";
 
 // Mismo canal público usado por la aplicación de Legales. El entorno puede
 // sustituirlo sin cambiar el código del landing.
