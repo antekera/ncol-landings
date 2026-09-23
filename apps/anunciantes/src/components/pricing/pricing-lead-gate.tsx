@@ -16,7 +16,7 @@ type PricingLeadGateProps = {
 export function PricingLeadGate({ months, onUnlocked }: PricingLeadGateProps) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [phoneNumber, setPhoneNumber] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("+58 ");
   const [phoneError, setPhoneError] = useState<string | null>(null);
 
   const submitLead = async (event: FormEvent<HTMLFormElement>) => {
@@ -109,33 +109,33 @@ export function PricingLeadGate({ months, onUnlocked }: PricingLeadGateProps) {
           />
         </label>
         <div className="grid gap-2 text-sm font-extrabold text-brand-navy">
-          <label htmlFor="phone-number">Teléfono o WhatsApp</label>
-          <input
-            required
-            id="phone-number"
-            type="tel"
-            name="phone"
-            autoComplete="tel"
-            inputMode="tel"
-            maxLength={32}
-            value={phoneNumber}
-            onChange={(event) => {
-              setPhoneNumber(formatInternationalPhone(event.target.value));
-              setPhoneError(null);
-            }}
-            className="min-h-12 min-w-0 rounded-xl border border-border bg-white px-3 text-base font-medium outline-none transition-shadow placeholder:text-muted-foreground/70 focus:border-brand-blue focus:ring-3 focus:ring-brand-blue/15"
-            placeholder="+58 412 1234567"
-            title="Incluye el signo + y el código de tu país."
-            aria-invalid={Boolean(phoneError)}
-            aria-describedby="phone-format-help"
-          />
+          <label className="grid gap-2 text-sm font-extrabold text-brand-navy" htmlFor="phone-number">Teléfono o WhatsApp
+            <input
+              required
+              id="phone-number"
+              type="tel"
+              name="phone"
+              autoComplete="tel"
+              inputMode="tel"
+              maxLength={32}
+              value={phoneNumber}
+              onChange={(event) => {
+                setPhoneNumber(formatInternationalPhone(event.target.value));
+                setPhoneError(null);
+              }}
+              className="min-h-12 rounded-xl border border-border bg-white px-3 text-base font-medium outline-none transition-shadow placeholder:text-muted-foreground/70 focus:border-brand-blue focus:ring-3 focus:ring-brand-blue/15"
+              placeholder="+58 412 1234567"
+              title="Incluye el signo + y el código de tu país."
+              aria-invalid={Boolean(phoneError)}
+              aria-describedby="phone-format-help"
+            />
+          </label>
           <p
             id="phone-format-help"
             className={`text-xs leading-5 font-medium ${phoneError ? "text-red-700" : "text-muted-foreground"}`}
             aria-live="polite"
           >
-            {phoneError ??
-              "Incluye + y el código de tu país. Aceptamos números internacionales válidos."}
+            {phoneError}
           </p>
         </div>
         <label className="sr-only" aria-hidden="true">
