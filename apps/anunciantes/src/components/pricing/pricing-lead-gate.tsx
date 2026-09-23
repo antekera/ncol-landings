@@ -3,6 +3,14 @@
 import { useState, type FormEvent } from "react";
 import type { PlanMonths } from "@/data/advertising";
 import { trackAnalyticsEvent } from "@/lib/analytics";
+import {
+  formatNationalPhone,
+  getPhonePattern,
+  getPhonePlaceholder,
+  PHONE_COUNTRIES,
+  toInternationalPhone,
+  type PhoneCountry,
+} from "@/lib/phone";
 
 type PricingLeadGateProps = {
   months: PlanMonths;
@@ -12,6 +20,8 @@ type PricingLeadGateProps = {
 export function PricingLeadGate({ months, onUnlocked }: PricingLeadGateProps) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [phoneCountry, setPhoneCountry] = useState<PhoneCountry>("VE");
+  const [phoneNumber, setPhoneNumber] = useState("");
 
   const submitLead = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -26,7 +36,7 @@ export function PricingLeadGate({ months, onUnlocked }: PricingLeadGateProps) {
         name: formData.get("name"),
         company: formData.get("company"),
         email: formData.get("email"),
-        phone: formData.get("phone"),
+        phone: toInternationalPhone(phoneNumber, phoneCountry),
         website: formData.get("website"),
         planDuration: months,
       }),
@@ -92,17 +102,52 @@ export function PricingLeadGate({ months, onUnlocked }: PricingLeadGateProps) {
             placeholder="correo@empresa.com"
           />
         </label>
-        <label className="grid gap-2 text-sm font-extrabold text-brand-navy">
-          Teléfono o WhatsApp
-          <input
-            required
-            type="tel"
-            name="phone"
-            autoComplete="tel"
-            className="min-h-12 rounded-xl border border-border bg-white px-3 text-base font-medium outline-none transition-shadow placeholder:text-muted-foreground/70 focus:border-brand-blue focus:ring-3 focus:ring-brand-blue/15"
-            placeholder="Tu número de contacto"
-          />
-        </label>
+        <div className="grid gap-2 text-sm font-extrabold text-brand-navy">
+          <label htmlFor="phone-number">Teléfono o WhatsApp</label>
+          <div className="flex gap-2">
+            <label className="sr-only" htmlFor="phone-country">
+              País y código internacional
+            </label>
+            <select
+              id="phone-country"
+              aria-label="País y código internacional"
+              value={phoneCountry}
+              onChange={(event) => {
+                const country = event.target.value as PhoneCountry;
+                setPhoneCountry(country);
+                setPhoneNumber((current) => formatNationalPhone(current, country));
+              }}
+              className="min-h-12 w-[6.5rem] shrink-0 rounded-xl border border-border bg-white px-2 text-sm font-bold outline-none transition-shadow focus:border-brand-blue focus:ring-3 focus:ring-brand-blue/15"
+            >
+              {Object.entries(PHONE_COUNTRIES).map(([code, country]) => (
+                <option key={code} value={code}>
+                  {country.dialCode} {code}
+                </option>
+              ))}
+            </select>
+            <input
+              required
+              id="phone-number"
+              type="tel"
+              name="phone"
+              autoComplete="tel-national"
+              inputMode="numeric"
+              pattern={getPhonePattern(phoneCountry)}
+              maxLength={getPhonePlaceholder(phoneCountry).length}
+              value={phoneNumber}
+              onChange={(event) =>
+                setPhoneNumber(formatNationalPhone(event.target.value, phoneCountry))
+              }
+              className="min-h-12 min-w-0 flex-1 rounded-xl border border-border bg-white px-3 text-base font-medium outline-none transition-shadow placeholder:text-muted-foreground/70 focus:border-brand-blue focus:ring-3 focus:ring-brand-blue/15"
+              placeholder={getPhonePlaceholder(phoneCountry)}
+              title={`Ingresa ${getPhonePlaceholder(phoneCountry)} para ${PHONE_COUNTRIES[phoneCountry].name}.`}
+              aria-describedby="phone-format-help"
+            />
+          </div>
+          <p id="phone-format-help" className="text-xs leading-5 font-medium text-muted-foreground">
+            Formato: {PHONE_COUNTRIES[phoneCountry].dialCode} {getPhonePlaceholder(phoneCountry)}.
+          </p>
+        </div>
         <label className="sr-only" aria-hidden="true">
           Sitio web
           <input name="website" tabIndex={-1} autoComplete="off" />
