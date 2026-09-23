@@ -14,7 +14,9 @@ export function PricingController() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const selectedMonths = getPlanMonths(searchParams.get("plan"));
-  const isPricingPreview = searchParams.get("prices") === "visible";
+  const isPricingPreview = ["price", "prices"].some(
+    (parameter) => searchParams.get(parameter) === "visible",
+  );
   const [isUnlocked, setIsUnlocked] = useState(false);
 
   useEffect(() => {
