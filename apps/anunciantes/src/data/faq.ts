@@ -5,14 +5,14 @@ export type FaqItem = {
 
 export const FAQ_ITEMS: readonly FaqItem[] = [
   {
-    question: "¿Qué incluye el valor mensual?",
+    question: "¿El valor corresponde a un mes de presencia en el formato seleccionado?",
     answer:
-      "El valor corresponde a un mes de presencia en el formato seleccionado. La tabla muestra también el compromiso total de los planes de 30, 90 o 180 días.",
+      "Sí. El precio indicado es mensual y corresponde a la presencia en el formato seleccionado. La tabla también muestra el compromiso total del plan elegido, de 30, 90 o 180 días.",
   },
   {
     question: "¿Las tarifas garantizan una cantidad de impresiones?",
     answer:
-      "No. Las tarifas presentadas corresponden a ubicación y período de campaña. Las impresiones, clics y CTR pueden reportarse, pero no se garantizan públicamente salvo que se acuerde expresamente en una propuesta comercial.",
+      "Sí. Garantizamos un mínimo de impresiones según el tiempo contratado. El banner se mantendrá publicado hasta alcanzar el mínimo de impresiones correspondiente.",
   },
   {
     question: "¿Qué beneficios en redes sociales incluye cada formato?",
@@ -22,7 +22,7 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
   {
     question: "¿Cómo preparo las piezas de mi campaña?",
     answer:
-      "Cada formato indica sus dimensiones para desktop y mobile. Antes de iniciar la campaña, el equipo comercial coordina contigo las piezas y los requisitos técnicos aplicables.",
+      "Cada formato indica sus dimensiones para desktop y mobile. Aceptamos imágenes en formato JPG, PNG o GIF. Antes de iniciar la campaña, el equipo comercial coordina contigo las piezas y los requisitos técnicos aplicables.",
   },
   {
     question: "¿Qué medios de pago aceptan?",
@@ -30,8 +30,8 @@ export const FAQ_ITEMS: readonly FaqItem[] = [
       "Aceptamos pago móvil, Zelle, Binance y PayPal como medios de pago.",
   },
   {
-    question: "¿El demostrador registra impresiones o clics reales?",
+    question: "¿Recibiré informes sobre mi campaña?",
     answer:
-      "No. El demostrador sirve únicamente para conocer la ubicación de un formato dentro de una noticia. No registra impresiones, clics ni métricas publicitarias reales.",
+      "Sí. Registramos todas las vistas y los clics de cada banner. Recibirás informes periódicos con las estadísticas de actividad de tu campaña.",
   },
 ] as const;
