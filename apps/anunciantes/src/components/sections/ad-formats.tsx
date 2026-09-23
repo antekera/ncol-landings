@@ -2,6 +2,7 @@ import { SectionHeading } from "@/components/ui/section-heading";
 import { VisibilityBadge } from "@/components/ui/visibility-badge";
 import { ADVERTISING_FORMATS } from "@/data/advertising";
 import { AdDemoButton } from "@/components/demo/ad-demo";
+import styles from "./commercial-surfaces.module.css";
 
 export function AdFormats() {
   return (
@@ -30,9 +31,9 @@ export function AdFormats() {
               key={format.id}
               id={`formato-${format.id}`}
               data-reveal
-              className={`relative overflow-hidden rounded-2xl border p-4 shadow-[0_18px_42px_-38px_rgba(16,32,57,0.7)] sm:p-5 ${
+              className={`${styles.formatCard} relative overflow-hidden rounded-2xl border p-4 sm:p-5 ${
                 format.recommended
-                  ? "border-brand-navy bg-brand-navy text-white"
+                  ? `${styles.formatRecommended} border-brand-navy text-white`
                   : "border-border bg-surface"
               }`}
             >

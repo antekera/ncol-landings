@@ -1,6 +1,7 @@
 import { SectionHeading } from "@/components/ui/section-heading";
 import { BenefitIcon } from "@/components/ui/benefit-icon";
 import { COMMERCIAL_BENEFITS } from "@/data/benefits";
+import styles from "./commercial-surfaces.module.css";
 
 export function Benefits() {
   return (
@@ -24,9 +25,9 @@ export function Benefits() {
             <li
               key={benefit.title}
               data-reveal
-              className="grid grid-cols-[3.25rem_1fr] gap-4 border-t border-brand-navy/20 py-6 sm:py-8"
+              className={`${styles.benefit} grid grid-cols-[3.25rem_1fr] gap-4 border-t border-brand-navy/15 py-6 sm:py-8`}
             >
-              <span className="grid size-11 place-items-center rounded-xl border border-brand-blue/20 bg-brand-blue/8 text-brand-blue">
+              <span className={`${styles.benefitIcon} grid size-11 place-items-center rounded-xl border border-brand-blue/20 bg-brand-blue/8 text-brand-blue`}>
                 <BenefitIcon name={benefit.icon} className="size-5" />
               </span>
               <div>

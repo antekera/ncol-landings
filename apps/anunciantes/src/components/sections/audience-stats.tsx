@@ -1,13 +1,14 @@
 import { SectionHeading } from "@/components/ui/section-heading";
 import { StatCounter } from "@/components/ui/stat-counter";
 import { AUDIENCE_STATS } from "@/data/stats";
+import styles from "./commercial-surfaces.module.css";
 
 export function AudienceStats() {
   return (
     <section
       id="audiencia"
       aria-labelledby="audiencia-title"
-      className="relative isolate overflow-hidden bg-brand-navy py-20 text-white sm:py-24"
+      className={`${styles.darkSurface} relative isolate overflow-hidden py-20 text-white sm:py-24`}
     >
       <div className="pointer-events-none absolute inset-0 -z-10 opacity-20 editorial-grid" />
       <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
@@ -22,25 +23,25 @@ export function AudienceStats() {
           </div>
         </div>
 
-        <dl className="mt-10 grid grid-cols-2 border-t border-l border-white/15 lg:grid-cols-12">
+        <dl className="mt-10 grid auto-rows-fr grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
           {AUDIENCE_STATS.map((stat) => (
             <div
               key={stat.label}
               data-reveal
-              className={`border-r border-b border-white/15 p-4 sm:p-6 lg:p-7 ${
+              className={`${styles.stat} rounded-2xl border border-white/15 p-4 sm:p-6 lg:p-7 ${
                 stat.featured
-                  ? "col-span-1 bg-brand-blue lg:col-span-6"
-                  : "col-span-1 lg:col-span-2"
+                  ? styles.statFeatured
+                  : ""
               }`}
             >
-              <dt className="text-xs leading-5 font-extrabold tracking-[0.1em] text-white/60 uppercase">
+              <dt className="min-h-10 text-[0.65rem] leading-5 font-extrabold tracking-[0.08em] text-white/75 uppercase sm:text-xs">
                 {stat.label}
               </dt>
               <dd
-                className={`mt-4 font-serif leading-none font-extrabold tracking-[-0.04em] ${
+                className={`mt-4 font-sans text-xl leading-none font-extrabold tracking-[-0.04em] whitespace-nowrap min-[375px]:text-2xl sm:text-4xl lg:text-3xl xl:text-4xl ${
                   stat.featured
-                    ? "text-3xl text-white sm:text-5xl"
-                    : "text-2xl text-brand-orange sm:text-3xl"
+                    ? "text-white"
+                    : "text-brand-orange"
                 }`}
               >
                 <StatCounter

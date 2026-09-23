@@ -1,10 +1,11 @@
 import { SectionHeading } from "@/components/ui/section-heading";
 import { TRANSPARENCY_FEATURES } from "@/data/transparency";
+import styles from "./commercial-surfaces.module.css";
 
 function ReportPreview() {
   return (
     <div
-      className="relative overflow-hidden rounded-2xl border border-white/15 bg-[#142947] p-5 shadow-[0_28px_80px_-38px_rgba(0,0,0,0.9)] sm:p-7"
+      className={`${styles.report} relative overflow-hidden rounded-2xl border border-white/20 p-5 sm:p-7`}
       aria-label="Representación de un informe de campaña con vistas, clics y período"
       role="img"
     >
@@ -47,7 +48,7 @@ function ReportPreview() {
             {[36, 55, 42, 72, 60, 88, 76, 96, 82, 100].map((height, index) => (
               <span
                 key={height}
-                className={`w-full rounded-t-sm ${index > 6 ? "bg-brand-orange" : "bg-brand-blue"}`}
+                className={`${styles.chartBar} w-full rounded-t-sm ${index > 6 ? "bg-brand-orange" : "bg-brand-blue"}`}
                 style={{ height: `${height}%` }}
               />
             ))}
@@ -63,7 +64,7 @@ export function CampaignTransparency() {
     <section
       id="transparencia"
       aria-labelledby="transparencia-title"
-      className="bg-brand-navy py-20 text-white sm:py-24"
+      className={`${styles.darkSurface} py-20 text-white sm:py-24`}
     >
       <div className="mx-auto grid max-w-7xl gap-12 px-5 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-20 lg:px-8">
         <div data-reveal>

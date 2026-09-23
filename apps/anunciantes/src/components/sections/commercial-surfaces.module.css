@@ -1,0 +1,176 @@
+.hero {
+  background:
+    radial-gradient(ellipse at 90% 32%, rgb(27 117 187 / 9%), transparent 48%),
+    radial-gradient(ellipse at 60% 90%, rgb(252 140 41 / 8%), transparent 40%),
+    var(--surface);
+}
+
+.hero::before {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  content: "";
+  pointer-events: none;
+  background-image: radial-gradient(rgb(16 32 57 / 12%) 0.6px, transparent 0.6px);
+  background-size: 7px 7px;
+  mask-image: linear-gradient(90deg, transparent 30%, #000);
+}
+
+.headline {
+  text-wrap: balance;
+}
+
+.headlineAccent {
+  position: relative;
+  display: inline-block;
+  isolation: isolate;
+  color: var(--brand-blue);
+}
+
+.headlineAccent::after {
+  position: absolute;
+  right: 0;
+  bottom: 0.1em;
+  left: 0;
+  z-index: -1;
+  height: 0.13em;
+  border-radius: 50% 20% 40% 15%;
+  background: rgb(252 140 41 / 32%);
+  content: "";
+  transform: rotate(-1.5deg);
+  transform-origin: left;
+}
+
+.showcase::before {
+  position: absolute;
+  inset: 1rem 1.5rem 4rem 0.5rem;
+  content: "";
+  border: 1px solid rgb(27 117 187 / 14%);
+  border-radius: 1.5rem;
+  background: rgb(255 255 255 / 65%);
+  transform: rotate(-5deg);
+  box-shadow: 0 24px 60px -40px rgb(16 32 57 / 35%);
+}
+
+.desktopFrame {
+  box-shadow: 0 32px 70px -32px rgb(16 32 57 / 35%), 0 2px 8px rgb(16 32 57 / 4%);
+}
+
+.creative {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(115deg, #102039, #1b527f);
+}
+
+.creative::after {
+  position: absolute;
+  top: -2rem;
+  right: -1.5rem;
+  width: 7rem;
+  height: 7rem;
+  border: 1rem solid rgb(252 140 41 / 70%);
+  border-radius: 50%;
+  content: "";
+  pointer-events: none;
+}
+
+.phone {
+  transform: rotate(4deg);
+}
+
+.caption {
+  border-radius: 0.25rem 0.75rem 0.75rem 0.25rem;
+  box-shadow: 0 12px 28px -12px rgb(16 32 57 / 40%);
+}
+
+.darkSurface {
+  background:
+    radial-gradient(ellipse at 95% 0, rgb(27 117 187 / 22%), transparent 60%),
+    var(--brand-navy);
+}
+
+.stat {
+  position: relative;
+  background: rgb(255 255 255 / 3%);
+}
+
+.statFeatured {
+  background: linear-gradient(145deg, #1b75bb, #16598f);
+}
+
+.stat dd {
+  font-variant-numeric: tabular-nums;
+}
+
+.report {
+  background: linear-gradient(145deg, #1d3a5d, #132740 70%);
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 12%), 0 30px 70px -35px rgb(0 0 0 / 65%);
+}
+
+.chartBar {
+  transform-origin: bottom;
+}
+
+.formatCard {
+  box-shadow: 0 8px 28px -22px rgb(16 32 57 / 30%);
+  transition: border-color 240ms ease, box-shadow 240ms ease;
+}
+
+.formatRecommended {
+  background: radial-gradient(ellipse at 100% 0, #234f76, transparent 75%), var(--brand-navy);
+}
+
+.benefitIcon {
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 80%);
+  transition: background-color 240ms ease, color 240ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .formatCard:hover {
+    border-color: var(--brand-blue);
+    box-shadow: 0 16px 40px -24px rgb(27 117 187 / 30%);
+  }
+
+  .formatRecommended:hover {
+    border-color: var(--brand-orange);
+  }
+
+  .benefit:hover .benefitIcon {
+    color: white;
+    background: var(--brand-blue);
+  }
+}
+
+@media (width >= 1024px) {
+  .desktopFrame {
+    transform: perspective(1200px) rotateY(-7deg) rotateZ(-2deg);
+  }
+
+  .showcase::before {
+    inset: 0 3rem 2.5rem 0;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .headlineAccent::after {
+    animation: underline-in 700ms 500ms both;
+  }
+
+  :global([data-revealed="true"]) .chartBar {
+    animation: chart-in 800ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  .chartBar:nth-child(2n) { animation-delay: 80ms; }
+  .chartBar:nth-child(3n) { animation-delay: 160ms; }
+  .chartBar:nth-child(5n) { animation-delay: 240ms; }
+}
+
+@keyframes underline-in {
+  from { transform: rotate(-1.5deg) scaleX(0); }
+  to { transform: rotate(-1.5deg) scaleX(1); }
+}
+
+@keyframes chart-in {
+  from { transform: scaleY(0.08); }
+  to { transform: scaleY(1); }
+}

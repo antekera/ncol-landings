@@ -30,7 +30,7 @@ export function SectionHeading({
       </p>
       <h2
         id={titleId}
-        className={`mt-5 font-serif text-3xl leading-tight font-extrabold tracking-[-0.035em] sm:text-5xl ${
+        className={`mt-5 font-serif text-3xl leading-tight font-extrabold tracking-[-0.035em] text-balance sm:text-5xl ${
           inverted ? "text-white" : "text-brand-navy"
         }`}
       >

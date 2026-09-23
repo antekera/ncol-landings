@@ -1,16 +1,18 @@
 
+import styles from "./commercial-surfaces.module.css";
+
 function AdPlacementShowcase() {
   return (
     <div
-      className="relative mx-auto min-h-[25rem] w-full max-w-[39rem] sm:min-h-[32rem]"
+      className={`${styles.showcase} relative mx-auto min-h-[25rem] w-full max-w-[39rem] sm:min-h-[32rem]`}
       aria-label="Representación de anuncios dentro de una noticia de Noticiascol"
       role="img"
     >
-      <div className="absolute top-2 right-1 left-0 overflow-hidden rounded-2xl border border-brand-navy/15 bg-surface shadow-[0_28px_70px_-36px_rgba(16,32,57,0.6)] sm:right-12">
+      <div className={`${styles.desktopFrame} absolute top-2 right-1 left-0 overflow-hidden rounded-2xl border border-brand-navy/15 bg-surface sm:right-12`}>
         <div className="flex h-8 items-center gap-1.5 border-b border-border bg-surface-muted px-3 sm:h-10">
-          <span className="size-2 bg-brand-orange" />
-          <span className="size-2 bg-brand-blue" />
-          <span className="size-2 bg-brand-gray" />
+          <span className="size-2 rounded-full bg-brand-orange" />
+          <span className="size-2 rounded-full bg-brand-blue" />
+          <span className="size-2 rounded-full bg-brand-gray" />
           <span className="ml-2 h-2 w-24 bg-brand-navy/10 sm:w-36" />
         </div>
 
@@ -26,12 +28,15 @@ function AdPlacementShowcase() {
             </div>
           </div>
 
-          <div className="mt-3 grid min-h-14 place-items-center border border-dashed border-brand-orange bg-[#fff8f0] px-3 text-center sm:min-h-20">
-            <div>
-              <span className="block text-[0.55rem] font-extrabold tracking-[0.18em] text-brand-orange uppercase sm:text-[0.65rem]">
-                Espacio publicitario
+          <div className={`${styles.creative} mt-3 flex min-h-20 items-center rounded-lg px-4 py-3 sm:min-h-28 sm:px-6`}>
+            <div className="relative z-10">
+              <span className="block text-[0.5rem] font-extrabold tracking-[0.18em] text-white/75 uppercase sm:text-[0.6rem]">
+                Tu próximo espacio
               </span>
-              <span className="mt-1 block text-[0.55rem] font-bold text-brand-navy/65 sm:text-xs">
+              <span className="mt-2 block font-serif text-lg font-extrabold tracking-tight text-white sm:text-3xl">
+                Aquí, <span className="text-brand-orange">tu marca.</span>
+              </span>
+              <span className="mt-2 block text-[0.5rem] font-bold text-white/65 sm:text-[0.6rem]">
                 Banner superior · 970 × 250 px
               </span>
             </div>
@@ -65,7 +70,7 @@ function AdPlacementShowcase() {
         </div>
       </div>
 
-      <div className="absolute right-0 bottom-0 w-[42%] min-w-[8.25rem] max-w-[11.5rem] overflow-hidden rounded-[1.35rem] border-[0.35rem] border-brand-navy bg-surface shadow-[0_24px_52px_-22px_rgba(16,32,57,0.75)] sm:border-[0.45rem]">
+      <div className={`${styles.phone} absolute right-1 bottom-0 w-[42%] min-w-[8.25rem] max-w-[11.5rem] overflow-hidden rounded-[1.35rem] border-[0.35rem] border-brand-navy bg-surface shadow-[0_24px_52px_-22px_rgba(16,32,57,0.75)] sm:border-[0.45rem]`}>
         <div className="mx-auto h-1.5 w-8 bg-brand-navy sm:h-2 sm:w-10" />
         <div className="border-t border-brand-navy/10 p-2 sm:p-3">
           <div className="flex items-center justify-between border-b border-border pb-1.5">
@@ -93,7 +98,7 @@ function AdPlacementShowcase() {
         </div>
       </div>
 
-      <div className="absolute bottom-9 left-0 border-l-4 border-brand-orange bg-brand-navy px-3 py-2 text-[0.58rem] font-extrabold tracking-[0.14em] text-white uppercase shadow-lg sm:bottom-16 sm:px-4 sm:py-3 sm:text-xs">
+      <div className={`${styles.caption} absolute bottom-9 left-0 border-l-4 border-brand-orange bg-brand-navy px-3 py-2 text-[0.58rem] font-extrabold tracking-[0.14em] text-white uppercase sm:bottom-16 sm:px-4 sm:py-3 sm:text-xs`}>
         Diseñado para ser visto
       </div>
     </div>
@@ -102,16 +107,15 @@ function AdPlacementShowcase() {
 
 export function Hero() {
   return (
-    <section id="inicio" className="relative isolate overflow-hidden bg-surface">
-      <div className="pointer-events-none absolute inset-y-0 right-0 -z-10 hidden w-[42%] border-l border-brand-blue/10 editorial-grid lg:block" />
+    <section id="inicio" className={`${styles.hero} relative isolate overflow-hidden`}>
       <div className="mx-auto grid min-h-[calc(100dvh-4rem)] max-w-7xl items-center gap-12 px-5 py-14 sm:px-6 sm:py-20 lg:min-h-[calc(100dvh-4.5rem)] lg:grid-cols-[0.88fr_1.12fr] lg:gap-10 lg:px-8 lg:py-16">
         <div className="max-w-2xl">
           <p className="flex items-center gap-3 text-xs font-extrabold tracking-[0.18em] text-brand-blue uppercase sm:text-sm" data-hero-step="2">
             <span className="h-px w-8 bg-brand-orange" aria-hidden="true" />
             Publicidad digital en Noticiascol
           </p>
-          <h1 className="mt-6 max-w-[12ch] font-serif text-[2.65rem] leading-[1.02] font-extrabold tracking-[-0.045em] text-brand-navy min-[375px]:text-5xl sm:text-6xl lg:text-[4.4rem]" data-hero-step="1">
-            Tu marca, donde está la noticia.
+          <h1 className={`${styles.headline} mt-6 max-w-[12ch] font-serif text-[2.65rem] leading-[1.1] font-extrabold tracking-[-0.045em] text-brand-navy min-[375px]:text-5xl sm:text-6xl lg:text-[4.4rem]`} data-hero-step="1">
+            Tu marca, donde está <span className={styles.headlineAccent}>la noticia.</span>
           </h1>
           <p className="mt-6 max-w-xl text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8" data-hero-step="3">
             Conecta tu negocio con la audiencia de uno de los sitios web de
