@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { isValidInternationalPhone } from "@/lib/phone";
+import { toInternationalPhone } from "@/lib/phone";
 
 export const runtime = "nodejs";
 
@@ -28,7 +28,7 @@ export async function POST(request: Request) {
   const name = text(payload.name, 120);
   const company = text(payload.company, 160);
   const email = text(payload.email, 254).toLowerCase();
-  const phone = text(payload.phone, 60);
+  const phone = toInternationalPhone(text(payload.phone, 60));
   const website = text(payload.website, 200);
   const planDuration = payload.planDuration;
 
@@ -39,7 +39,7 @@ export async function POST(request: Request) {
   if (
     !name ||
     !company ||
-    !isValidInternationalPhone(phone) ||
+    !phone ||
     !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) ||
     ![1, 3, 6].includes(planDuration as number)
   ) {
